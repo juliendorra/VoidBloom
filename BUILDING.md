@@ -23,7 +23,8 @@ python chgame.py sim
 For an existing CHGame checkout, set `CHGAME_ROOT` to its absolute path
 instead of cloning it. The simulator uses the game's C++ rules and renderer.
 Tests include 48 delayed-observation campaign pilots, a separate first-boss
-dodge fixture, and passive pressure measurements. They run faster than wall
+dodge fixture, passive pressure measurements, and 80 framebuffer checks of
+ship visibility at the movement boundaries. They run faster than wall
 time while the game still advances in 1/60-second steps; they are not human
 playtests. Results are written to `out/balance.json`.
 
@@ -53,6 +54,7 @@ pages. The save identifier is `VBLM`.
 
 ```sh
 python tools/verify_sim.py --capture
+python tools/verify_boundaries.py
 python tools/capture_levels.py
 ```
 

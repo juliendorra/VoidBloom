@@ -4,6 +4,12 @@
 // Clock-free 60 Hz rules shared by the handheld, tests and native preview.
 namespace bloom {
 constexpr int Q = 64, BULLETS = 192, SHOTS = 40, ENEMIES = 24, SPARKS = 32;
+// The HUD starts below row 119. Reserve the complete ship footprint,
+// including focus markers and the longest animated exhaust plume.
+constexpr int FIELD_TOP=11, FIELD_BOTTOM=119;
+constexpr int SHIP_SIDE=7, SHIP_ABOVE=6, SHIP_BELOW=7;
+constexpr int PLAYER_MIN_X=SHIP_SIDE, PLAYER_MAX_X=127-SHIP_SIDE;
+constexpr int PLAYER_MIN_Y=58, PLAYER_MAX_Y=FIELD_BOTTOM-SHIP_BELOW;
 enum Screen : uint8_t { Title, Help, Play, Paused, Evolution, Over };
 enum Key : uint8_t { Fire=1, Focus=2, Up=4, Down=8, Left=16, Right=32, Start=64, Bomb=128 };
 enum Kind : uint8_t { Invader=1, Scout, Weaver, Turret, Boss };

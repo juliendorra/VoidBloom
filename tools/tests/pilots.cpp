@@ -40,7 +40,8 @@ Decision choose(Game &s,unsigned id,unsigned delay,int ownX,int ownY,bool allowF
         float cost=0,danger=0;
         const float x0=float(s.px)/Q,y0=float(s.py)/Q;
         for(unsigned t=0;t<=40;t+=4) {
-            float x=bounded(x0+dx*speed*t,5,123),y=bounded(y0+dy*speed*t,58,119);
+            float x=bounded(x0+dx*speed*t,PLAYER_MIN_X,PLAYER_MAX_X);
+            float y=bounded(y0+dy*speed*t,PLAYER_MIN_Y,PLAYER_MAX_Y);
             for(const auto &b:s.bullets)if(b.kind) {
                 float bx=float(b.x+b.vx*int(t))/Q,by=float(b.y+b.vy*int(t))/Q;
                 if(bx<-5 || bx>133 || by<10 || by>128)continue;
@@ -55,7 +56,8 @@ Decision choose(Game &s,unsigned id,unsigned delay,int ownX,int ownY,bool allowF
                 if(ax*ax+ay*ay<196)danger+=1500;
             }
         }
-        float endX=bounded(x0+dx*speed*12,5,123),endY=bounded(y0+dy*speed*12,58,119);
+        float endX=bounded(x0+dx*speed*12,PLAYER_MIN_X,PLAYER_MAX_X);
+        float endY=bounded(y0+dy*speed*12,PLAYER_MIN_Y,PLAYER_MAX_Y);
         cost=danger*4+absval(int(endX-target))*.24f+fabsf(endY-(109+(id%3)*3))*.25f;
         if(endY<90)cost+=(90-endY)*3;
         cost+=focus?.16f:0;cost+=dx==0&&dy==0?0:.08f;

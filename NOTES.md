@@ -22,6 +22,18 @@ The extended pressure fixture observes bosses for 60 seconds, covering repeated 
 
 The 1.1.1 release is 25,948 bytes with 15,272 bytes static RAM and both save pages preserved. On 31 October 2026 the connected Rev0 accepted CRC32 `0x734C1E2E` and confirmed application launch after RUN. Actual release firmware emulation measured 60.00 fps in the opening window with no CPU faults; dense-boss hardware performance is not measured by that check.
 
+## Full ship bounds (1.1.2)
+
+The old center limits let the ship reach y=119, where the playfield ends, so its lower hull and exhaust were clipped by the bottom HUD. Focus markers could also pass the left and right edges. Movement now reserves the complete footprint: center x=7–120 and y=58–112. This keeps the focus markers (seven pixels to either side), focus ring, side pods, and the longest exhaust plume inside the field. The upper movement band, hitbox, weapons, bullet budgets, and enemy patterns are unchanged.
+
+Shared playfield and ship extents connect movement to the renderer's clipping region. `tools/verify_boundaries.py` checks 80 normal/focus edge and diagonal cases across all five weapon tiers. It uses the real rendered ship at an interior position as its reference, then compares every visible ship pixel at the boundary, including the longest exhaust frame. It reproduced the old failure before the fix and is now part of the standard test command. The empty-arena command is simulator-only.
+
+The same 48 seeds and 100/150/200 ms pilot delays completed the wave-13 milestone both before and after the fix. Total deaths across those campaigns rose from 24 to 37; bomb uses rose from 435 to 459; median completion time changed from 190.41 to 191.94 seconds. The added deaths are concentrated in the later waves, especially wave 12. The first-boss movement-only test still completed 24/24 without a hit. The fix removes some previously available edge space and makes later dodging harder, while preserving completion for this cohort. These are heuristic simulations, not human completion-rate measurements. [docs/bounds-comparison.json](docs/bounds-comparison.json) contains the paired results.
+
+[Bottom-edge comparison](docs/bounds-before-after.png) shows 1.1.1 on the left and 1.1.2 on the right. [Focused corner captures](docs/boundary-corners.png) show the complete ship at all four corners of the movement band.
+
+On 1 November 2026, the connected Rev0 accepted the 25,948-byte 1.1.2 release with CRC32 `0x090290A8` and confirmed application launch after RUN. Static RAM remains 15,272 bytes and both save pages are preserved. The standalone checkout produces the same firmware bytes. Release firmware emulation measured 60.00 fps in the opening window with zero CPU faults; this does not measure dense-wave performance on the physical console.
+
 ## Reproduce
 
 See [BUILDING.md](BUILDING.md) for the standalone setup and pinned CHGame dependency. Run these commands from the game folder. The launcher also recognizes the existing isolated board installation when used inside the development workspace.

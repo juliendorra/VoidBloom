@@ -13,15 +13,24 @@ static void frames(unsigned n,unsigned keys=0) {while(n--)g.update(keys);}
 static void check() {
     assert(g.liveBullets()<=g.bulletLimit() && g.liveEnemies()<=ENEMIES);
     assert(g.phase<=4 && g.lives<=5 && g.bombs<=5 && g.combo<=8);
-    assert(g.px>=5*Q && g.px<=123*Q && g.py>=58*Q && g.py<=119*Q);
+    assert(g.px>=PLAYER_MIN_X*Q && g.px<=PLAYER_MAX_X*Q && g.py>=PLAYER_MIN_Y*Q && g.py<=PLAYER_MAX_Y*Q);
+    assert(g.px/Q-SHIP_SIDE>=0 && g.px/Q+SHIP_SIDE<=127);
+    assert(g.py/Q-SHIP_ABOVE>=FIELD_TOP && g.py/Q+SHIP_BELOW<=FIELD_BOTTOM);
     for(const auto &b:g.bullets)if(b.kind)assert(b.x>=-12*Q && b.x<=140*Q && b.y>=-14*Q && b.y<=138*Q);
 }
 int main() {
     static_assert(sizeof(Game)<4096,"Keep native state within the handheld RAM budget");
     ready();int y=g.py;frames(30,Up|Fire);assert(g.py==y && g.phase==0);
-    frames(120,Left);assert(g.px==5*Q);frames(120,Right);assert(g.px==123*Q);
-    ready(3);frames(20,Up);assert(g.py<111*Q);frames(100,Up|Left);assert(g.py==58*Q && g.px==5*Q);
-    frames(140,Down|Right);assert(g.py==119*Q && g.px==123*Q);
+    frames(120,Left);assert(g.px==7*Q);frames(120,Right);assert(g.px==120*Q);
+    ready(3);frames(20,Up);assert(g.py<111*Q);frames(100,Up|Left);assert(g.py==58*Q && g.px==7*Q);
+    frames(140,Down|Right);assert(g.py==112*Q && g.px==120*Q);
+    for(unsigned wave:{1u,3u,5u,7u,9u})for(unsigned focus:{0u,unsigned(Focus)})
+    for(unsigned keys:{unsigned(Left),unsigned(Right),unsigned(Up),unsigned(Down),
+                       unsigned(Up|Left),unsigned(Up|Right),unsigned(Down|Left),unsigned(Down|Right)}) {
+        ready(wave);empty();g.spawned=g.waveTotal;g.remaining=1;frames(240,keys|focus);check();
+        assert(g.px==((keys&Left)?7:(keys&Right)?120:64)*Q);
+        assert(g.py==(wave==1?111:(keys&Up)?58:(keys&Down)?112:111)*Q);
+    }
     ready(3);frames(10,Left);int fast=64*Q-g.px;
     ready(3);frames(10,Left|Focus);assert(64*Q-g.px<fast);
     // Wave 2 introduces one readable sortie before free flight. It must

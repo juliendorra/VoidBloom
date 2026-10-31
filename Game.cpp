@@ -362,7 +362,8 @@ void Game::update(uint8_t keys) {
     if(comboClock) {if(!--comboClock) {combo=1;chain=0;}}
     int dx=((keys&Right)!=0)-((keys&Left)!=0),dy=phase?((keys&Down)!=0)-((keys&Up)!=0):0;
     int speed=focus?40:100;if(dx && dy)speed=speed*181/256;
-    px=clamp(px+dx*speed,5*Q,123*Q);py=clamp(py+dy*speed,58*Q,119*Q);
+    px=clamp(px+dx*speed,PLAYER_MIN_X*Q,PLAYER_MAX_X*Q);
+    py=clamp(py+dy*speed,PLAYER_MIN_Y*Q,PLAYER_MAX_Y*Q);
     if(keys&(Fire|Focus))fire();
     enemiesTick();
     if(screen!=Play || transition)return;

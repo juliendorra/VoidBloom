@@ -7,10 +7,10 @@
       "seed": 13283328,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 181.1,
-      "deaths": 1,
-      "bombs": 10,
-      "score": 62685,
+      "seconds": 189.92,
+      "deaths": 0,
+      "bombs": 11,
+      "score": 54050,
       "completed": true
     },
     {
@@ -18,10 +18,10 @@
       "seed": 13291247,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 197.12,
+      "seconds": 196.07,
       "deaths": 1,
-      "bombs": 10,
-      "score": 60060,
+      "bombs": 8,
+      "score": 48615,
       "completed": true
     },
     {
@@ -29,10 +29,10 @@
       "seed": 13299166,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 201.47,
-      "deaths": 2,
+      "seconds": 193.32,
+      "deaths": 3,
       "bombs": 10,
-      "score": 51735,
+      "score": 43490,
       "completed": true
     },
     {
@@ -40,10 +40,10 @@
       "seed": 13307085,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 183.57,
+      "seconds": 189.08,
       "deaths": 0,
-      "bombs": 9,
-      "score": 58850,
+      "bombs": 10,
+      "score": 44620,
       "completed": true
     },
     {
@@ -51,10 +51,10 @@
       "seed": 13315004,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 200.48,
-      "deaths": 1,
-      "bombs": 8,
-      "score": 43675,
+      "seconds": 192.1,
+      "deaths": 0,
+      "bombs": 10,
+      "score": 61895,
       "completed": true
     },
     {
@@ -62,10 +62,10 @@
       "seed": 13322923,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 184.5,
+      "seconds": 193.42,
       "deaths": 0,
-      "bombs": 9,
-      "score": 43955,
+      "bombs": 11,
+      "score": 66110,
       "completed": true
     },
     {
@@ -73,10 +73,10 @@
       "seed": 13330842,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 184.45,
+      "seconds": 177.75,
       "deaths": 0,
-      "bombs": 10,
-      "score": 46995,
+      "bombs": 8,
+      "score": 42370,
       "completed": true
     },
     {
@@ -84,10 +84,10 @@
       "seed": 13338761,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 189.42,
-      "deaths": 1,
-      "bombs": 9,
-      "score": 38975,
+      "seconds": 194.42,
+      "deaths": 0,
+      "bombs": 8,
+      "score": 39835,
       "completed": true
     },
     {
@@ -95,10 +95,10 @@
       "seed": 13346680,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 194.87,
+      "seconds": 203.97,
       "deaths": 0,
-      "bombs": 11,
-      "score": 45890,
+      "bombs": 10,
+      "score": 47450,
       "completed": true
     },
     {
@@ -106,10 +106,10 @@
       "seed": 13354599,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 189.65,
-      "deaths": 0,
-      "bombs": 8,
-      "score": 44070,
+      "seconds": 187.07,
+      "deaths": 1,
+      "bombs": 10,
+      "score": 44830,
       "completed": true
     },
     {
@@ -117,10 +117,10 @@
       "seed": 13362518,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 179.22,
-      "deaths": 0,
-      "bombs": 8,
-      "score": 45275,
+      "seconds": 173.65,
+      "deaths": 2,
+      "bombs": 10,
+      "score": 48660,
       "completed": true
     },
     {
@@ -128,10 +128,10 @@
       "seed": 13370437,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 199.77,
-      "deaths": 0,
-      "bombs": 8,
-      "score": 50510,
+      "seconds": 193.6,
+      "deaths": 1,
+      "bombs": 10,
+      "score": 44565,
       "completed": true
     },
     {
@@ -139,10 +139,10 @@
       "seed": 13378356,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 182.28,
+      "seconds": 192.95,
       "deaths": 0,
       "bombs": 10,
-      "score": 43820,
+      "score": 60330,
       "completed": true
     },
     {
@@ -150,10 +150,10 @@
       "seed": 13386275,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 191.17,
-      "deaths": 0,
-      "bombs": 8,
-      "score": 46050,
+      "seconds": 199.9,
+      "deaths": 1,
+      "bombs": 9,
+      "score": 39360,
       "completed": true
     },
     {
@@ -161,10 +161,10 @@
       "seed": 13394194,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 194.18,
+      "seconds": 175.67,
       "deaths": 1,
-      "bombs": 10,
-      "score": 52290,
+      "bombs": 9,
+      "score": 44510,
       "completed": true
     },
     {
@@ -172,10 +172,10 @@
       "seed": 13402113,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 168.4,
-      "deaths": 1,
-      "bombs": 9,
-      "score": 49180,
+      "seconds": 185.12,
+      "deaths": 0,
+      "bombs": 10,
+      "score": 38970,
       "completed": true
     },
     {
@@ -183,10 +183,10 @@
       "seed": 13410032,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 197.07,
-      "deaths": 1,
+      "seconds": 186.4,
+      "deaths": 2,
       "bombs": 9,
-      "score": 39360,
+      "score": 41625,
       "completed": true
     },
     {
@@ -194,10 +194,10 @@
       "seed": 13417951,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 202.05,
-      "deaths": 0,
-      "bombs": 10,
-      "score": 62030,
+      "seconds": 182.08,
+      "deaths": 1,
+      "bombs": 9,
+      "score": 52950,
       "completed": true
     },
     {
@@ -205,10 +205,10 @@
       "seed": 13425870,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 189.08,
+      "seconds": 197.63,
       "deaths": 0,
-      "bombs": 8,
-      "score": 37890,
+      "bombs": 12,
+      "score": 54285,
       "completed": true
     },
     {
@@ -216,10 +216,10 @@
       "seed": 13433789,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 207.07,
-      "deaths": 0,
-      "bombs": 8,
-      "score": 41675,
+      "seconds": 195.47,
+      "deaths": 1,
+      "bombs": 7,
+      "score": 39705,
       "completed": true
     },
     {
@@ -227,10 +227,10 @@
       "seed": 13441708,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 190.2,
+      "seconds": 183.78,
       "deaths": 1,
       "bombs": 10,
-      "score": 51305,
+      "score": 43340,
       "completed": true
     },
     {
@@ -238,10 +238,10 @@
       "seed": 13449627,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 173.57,
+      "seconds": 190.77,
       "deaths": 1,
-      "bombs": 10,
-      "score": 39135,
+      "bombs": 7,
+      "score": 39225,
       "completed": true
     },
     {
@@ -249,10 +249,10 @@
       "seed": 13457546,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 191.98,
+      "seconds": 191.77,
       "deaths": 0,
       "bombs": 9,
-      "score": 53275,
+      "score": 41995,
       "completed": true
     },
     {
@@ -260,10 +260,10 @@
       "seed": 13465465,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 199.83,
-      "deaths": 1,
-      "bombs": 9,
-      "score": 43915,
+      "seconds": 197.72,
+      "deaths": 2,
+      "bombs": 11,
+      "score": 46005,
       "completed": true
     },
     {
@@ -271,10 +271,10 @@
       "seed": 13473384,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 174.63,
-      "deaths": 1,
-      "bombs": 7,
-      "score": 46700,
+      "seconds": 190.98,
+      "deaths": 0,
+      "bombs": 10,
+      "score": 41035,
       "completed": true
     },
     {
@@ -282,10 +282,10 @@
       "seed": 13481303,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 190.62,
+      "seconds": 192.43,
       "deaths": 1,
-      "bombs": 7,
-      "score": 40765,
+      "bombs": 10,
+      "score": 56385,
       "completed": true
     },
     {
@@ -293,10 +293,10 @@
       "seed": 13489222,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 199.3,
+      "seconds": 192.97,
       "deaths": 1,
-      "bombs": 9,
-      "score": 50705,
+      "bombs": 8,
+      "score": 40995,
       "completed": true
     },
     {
@@ -304,10 +304,10 @@
       "seed": 13497141,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 185.62,
-      "deaths": 0,
+      "seconds": 197.83,
+      "deaths": 1,
       "bombs": 9,
-      "score": 43385,
+      "score": 38830,
       "completed": true
     },
     {
@@ -315,10 +315,10 @@
       "seed": 13505060,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 175.68,
+      "seconds": 195.32,
       "deaths": 0,
-      "bombs": 9,
-      "score": 37235,
+      "bombs": 7,
+      "score": 58615,
       "completed": true
     },
     {
@@ -326,10 +326,10 @@
       "seed": 13512979,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 186.75,
-      "deaths": 0,
-      "bombs": 8,
-      "score": 45315,
+      "seconds": 194.28,
+      "deaths": 1,
+      "bombs": 12,
+      "score": 47140,
       "completed": true
     },
     {
@@ -337,10 +337,10 @@
       "seed": 13520898,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 200.97,
-      "deaths": 0,
-      "bombs": 11,
-      "score": 34650,
+      "seconds": 203.1,
+      "deaths": 1,
+      "bombs": 8,
+      "score": 34035,
       "completed": true
     },
     {
@@ -348,10 +348,10 @@
       "seed": 13528817,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 191.05,
-      "deaths": 0,
-      "bombs": 8,
-      "score": 58120,
+      "seconds": 186.62,
+      "deaths": 2,
+      "bombs": 9,
+      "score": 47480,
       "completed": true
     },
     {
@@ -359,10 +359,10 @@
       "seed": 13536736,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 216.67,
-      "deaths": 2,
+      "seconds": 202.78,
+      "deaths": 3,
       "bombs": 8,
-      "score": 37780,
+      "score": 35465,
       "completed": true
     },
     {
@@ -370,10 +370,10 @@
       "seed": 13544655,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 184.87,
+      "seconds": 202.3,
       "deaths": 0,
-      "bombs": 9,
-      "score": 49935,
+      "bombs": 10,
+      "score": 49745,
       "completed": true
     },
     {
@@ -381,10 +381,10 @@
       "seed": 13552574,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 195.9,
-      "deaths": 1,
-      "bombs": 8,
-      "score": 58215,
+      "seconds": 201.6,
+      "deaths": 0,
+      "bombs": 11,
+      "score": 48780,
       "completed": true
     },
     {
@@ -392,10 +392,10 @@
       "seed": 13560493,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 190.65,
+      "seconds": 189.63,
       "deaths": 0,
       "bombs": 9,
-      "score": 47835,
+      "score": 39985,
       "completed": true
     },
     {
@@ -403,10 +403,10 @@
       "seed": 13568412,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 184.9,
+      "seconds": 188.25,
       "deaths": 0,
-      "bombs": 8,
-      "score": 47970,
+      "bombs": 11,
+      "score": 62005,
       "completed": true
     },
     {
@@ -414,10 +414,10 @@
       "seed": 13576331,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 189.52,
-      "deaths": 0,
-      "bombs": 8,
-      "score": 57165,
+      "seconds": 188.27,
+      "deaths": 1,
+      "bombs": 10,
+      "score": 69585,
       "completed": true
     },
     {
@@ -425,10 +425,10 @@
       "seed": 13584250,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 193.97,
+      "seconds": 186.22,
       "deaths": 0,
       "bombs": 11,
-      "score": 64710,
+      "score": 57505,
       "completed": true
     },
     {
@@ -436,10 +436,10 @@
       "seed": 13592169,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 193.17,
+      "seconds": 187.72,
       "deaths": 0,
       "bombs": 10,
-      "score": 63365,
+      "score": 65870,
       "completed": true
     },
     {
@@ -447,10 +447,10 @@
       "seed": 13600088,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 186.93,
+      "seconds": 189.42,
       "deaths": 0,
-      "bombs": 9,
-      "score": 47435,
+      "bombs": 8,
+      "score": 57005,
       "completed": true
     },
     {
@@ -458,10 +458,10 @@
       "seed": 13608007,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 190.1,
+      "seconds": 188.42,
       "deaths": 2,
-      "bombs": 9,
-      "score": 39475,
+      "bombs": 11,
+      "score": 43740,
       "completed": true
     },
     {
@@ -469,10 +469,10 @@
       "seed": 13615926,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 168.55,
+      "seconds": 183.88,
       "deaths": 1,
-      "bombs": 8,
-      "score": 39500,
+      "bombs": 10,
+      "score": 49935,
       "completed": true
     },
     {
@@ -480,10 +480,10 @@
       "seed": 13623845,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 191.63,
-      "deaths": 0,
-      "bombs": 9,
-      "score": 55365,
+      "seconds": 196.17,
+      "deaths": 1,
+      "bombs": 10,
+      "score": 50295,
       "completed": true
     },
     {
@@ -491,7 +491,7 @@
       "seed": 13631764,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 186.58,
+      "seconds": 193.17,
       "deaths": 2,
       "bombs": 11,
       "score": 45425,
@@ -502,10 +502,10 @@
       "seed": 13639683,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 192.32,
-      "deaths": 1,
+      "seconds": 180.03,
+      "deaths": 0,
       "bombs": 10,
-      "score": 42130,
+      "score": 49145,
       "completed": true
     },
     {
@@ -513,10 +513,10 @@
       "seed": 13647602,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 191.23,
-      "deaths": 0,
-      "bombs": 10,
-      "score": 60175,
+      "seconds": 202.25,
+      "deaths": 1,
+      "bombs": 9,
+      "score": 52625,
       "completed": true
     },
     {
@@ -524,17 +524,17 @@
       "seed": 13655521,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 181.27,
-      "deaths": 0,
-      "bombs": 10,
-      "score": 57395,
+      "seconds": 181.33,
+      "deaths": 1,
+      "bombs": 9,
+      "score": 38100,
       "completed": true
     }
   ],
   "completed": 48,
   "full_evolution": 48,
   "highest_wave": 13,
-  "total_deaths": 24,
+  "total_deaths": 37,
   "waves": [
     {
       "wave": 1,
@@ -544,10 +544,10 @@
       "deaths": 0,
       "body_impacts": 0,
       "bullet_impacts": 0,
-      "bombs": 8,
+      "bombs": 6,
       "mean_bullets": 1.27,
       "peak_bullets": 2,
-      "play_seconds": 457.13
+      "play_seconds": 458.27
     },
     {
       "wave": 2,
@@ -558,9 +558,9 @@
       "body_impacts": 0,
       "bullet_impacts": 0,
       "bombs": 0,
-      "mean_bullets": 1.52,
+      "mean_bullets": 1.48,
       "peak_bullets": 4,
-      "play_seconds": 390.82
+      "play_seconds": 353.45
     },
     {
       "wave": 3,
@@ -570,10 +570,10 @@
       "deaths": 0,
       "body_impacts": 0,
       "bullet_impacts": 0,
-      "bombs": 12,
-      "mean_bullets": 1.93,
-      "peak_bullets": 7,
-      "play_seconds": 631.95
+      "bombs": 16,
+      "mean_bullets": 1.91,
+      "peak_bullets": 6,
+      "play_seconds": 620.88
     },
     {
       "wave": 4,
@@ -583,10 +583,10 @@
       "deaths": 0,
       "body_impacts": 0,
       "bullet_impacts": 0,
-      "bombs": 5,
-      "mean_bullets": 4.05,
+      "bombs": 6,
+      "mean_bullets": 4.04,
       "peak_bullets": 12,
-      "play_seconds": 930.18
+      "play_seconds": 917.22
     },
     {
       "wave": 5,
@@ -596,10 +596,10 @@
       "deaths": 0,
       "body_impacts": 0,
       "bullet_impacts": 0,
-      "bombs": 15,
-      "mean_bullets": 6.62,
+      "bombs": 25,
+      "mean_bullets": 6.13,
       "peak_bullets": 19,
-      "play_seconds": 584.17
+      "play_seconds": 571.08
     },
     {
       "wave": 6,
@@ -609,10 +609,10 @@
       "deaths": 1,
       "body_impacts": 1,
       "bullet_impacts": 0,
-      "bombs": 9,
-      "mean_bullets": 6.69,
+      "bombs": 13,
+      "mean_bullets": 6.06,
       "peak_bullets": 20,
-      "play_seconds": 574.25
+      "play_seconds": 588.72
     },
     {
       "wave": 7,
@@ -622,10 +622,10 @@
       "deaths": 0,
       "body_impacts": 0,
       "bullet_impacts": 0,
-      "bombs": 72,
-      "mean_bullets": 9.47,
+      "bombs": 82,
+      "mean_bullets": 8.93,
       "peak_bullets": 39,
-      "play_seconds": 611.37
+      "play_seconds": 602.25
     },
     {
       "wave": 8,
@@ -636,35 +636,35 @@
       "body_impacts": 0,
       "bullet_impacts": 1,
       "bombs": 125,
-      "mean_bullets": 26.13,
+      "mean_bullets": 25.24,
       "peak_bullets": 55,
-      "play_seconds": 808.9
+      "play_seconds": 731.5
     },
     {
       "wave": 9,
       "phase": 4,
       "entries": 48,
       "clears": 48,
-      "deaths": 3,
+      "deaths": 2,
       "body_impacts": 2,
-      "bullet_impacts": 1,
-      "bombs": 82,
-      "mean_bullets": 9.46,
-      "peak_bullets": 43,
-      "play_seconds": 654.9
+      "bullet_impacts": 0,
+      "bombs": 80,
+      "mean_bullets": 8.74,
+      "peak_bullets": 40,
+      "play_seconds": 663.47
     },
     {
       "wave": 10,
       "phase": 4,
       "entries": 48,
       "clears": 48,
-      "deaths": 4,
-      "body_impacts": 2,
-      "bullet_impacts": 2,
-      "bombs": 58,
-      "mean_bullets": 10.64,
-      "peak_bullets": 45,
-      "play_seconds": 670.72
+      "deaths": 8,
+      "body_impacts": 4,
+      "bullet_impacts": 4,
+      "bombs": 46,
+      "mean_bullets": 11.12,
+      "peak_bullets": 47,
+      "play_seconds": 683.85
     },
     {
       "wave": 11,
@@ -672,25 +672,25 @@
       "entries": 48,
       "clears": 48,
       "deaths": 10,
-      "body_impacts": 6,
-      "bullet_impacts": 4,
-      "bombs": 27,
-      "mean_bullets": 12.13,
-      "peak_bullets": 43,
-      "play_seconds": 674.23
+      "body_impacts": 5,
+      "bullet_impacts": 5,
+      "bombs": 28,
+      "mean_bullets": 12.45,
+      "peak_bullets": 45,
+      "play_seconds": 689.65
     },
     {
       "wave": 12,
       "phase": 4,
       "entries": 48,
       "clears": 48,
-      "deaths": 5,
+      "deaths": 15,
       "body_impacts": 0,
-      "bullet_impacts": 5,
-      "bombs": 22,
-      "mean_bullets": 51.86,
+      "bullet_impacts": 15,
+      "bombs": 32,
+      "mean_bullets": 52.73,
       "peak_bullets": 103,
-      "play_seconds": 1114.73
+      "play_seconds": 1286.23
     }
   ],
   "pressure": {

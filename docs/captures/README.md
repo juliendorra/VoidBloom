@@ -1,6 +1,6 @@
 # Wave captures
 
-Key moments from the first 12 waves of Void Bloom 1.1.1. The game continues endlessly after wave 12.
+Key moments from the first 12 waves of Void Bloom 1.1.2. The game continues endlessly after wave 12.
 
 ![Wave contact sheet, in wave order](contact-sheet.png)
 

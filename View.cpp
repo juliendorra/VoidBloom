@@ -91,7 +91,7 @@ void boss(const bloom::Enemy &e,const bloom::Game &g) {
     gfx_rect(x-3,y-3,7,7,color);gfx_pixel(x,y,White);
 }
 void field(const bloom::Game &g) {
-    gfx_setClip(0,11,128,109);
+    gfx_setClip(0,bloom::FIELD_TOP,128,bloom::FIELD_BOTTOM-bloom::FIELD_TOP+1);
     for(const auto &e:g.enemies)if(e.kind) {
         int x=e.x/bloom::Q,y=e.y/bloom::Q;
         if(e.kind==bloom::Boss)boss(e,g);
@@ -159,7 +159,7 @@ void hud(const bloom::Game &g) {
     gfx_fillRect(0,0,128,11,Black);gfx_hline(0,9,128,Grid);
     number(2,2,g.score,White);text35(81,2,"X",Dim);number(87,2,g.combo,Gold);
     text35(103,2,"W",Dim);number(109,2,g.wave,Cyan);
-    gfx_fillRect(0,120,128,8,Black);gfx_hline(0,120,128,Grid);
+    gfx_fillRect(0,bloom::FIELD_BOTTOM+1,128,8,Black);gfx_hline(0,bloom::FIELD_BOTTOM+1,128,Grid);
     for(unsigned i=0;i<g.lives;++i) {
         gfx_hline(3+i*6,125,5,White);gfx_vline(5+i*6,122,4,White);
     }

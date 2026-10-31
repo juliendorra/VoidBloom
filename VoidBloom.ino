@@ -20,6 +20,18 @@ const audio::Effect SOUNDS[]={AUDIO_EFFECT(FIRE_SOUND,audio::SOFT),AUDIO_EFFECT(
 #if CHGAME_DEBUG
 static bool debug(char command,const char *args) {
 #if defined(CHSIM) && defined(BLOOM_CAPTURE)
+    // Empty arena for exercising controls and comparing the whole ship
+    // against an unclipped reference. Never compiled into firmware.
+    if(command=='E') {
+        unsigned wave=3,tick=1,hidden=0;int x=64,y=85;
+        sscanf(args,"%u %d %d %u %u",&wave,&x,&y,&tick,&hidden);
+        if(wave<1 || wave>12 || x<0 || x>127 || y<11 || y>119)return false;
+        game.begin(12345);game.wave=wave;game.phase=bloom::Game::phaseFor(wave);game.startWave();
+        for(auto &e:game.enemies)e.kind=0;
+        game.spawned=game.waveTotal;game.remaining=1;game.transition=0;
+        game.px=x*bloom::Q;game.py=y*bloom::Q;game.tick=tick;game.invincible=hidden?7:0;
+        return true;
+    }
     // Stage selection exists only in the separately built capture fixture.
     // The cartridge and ordinary simulator never include this command.
     if(command=='J') {
@@ -40,7 +52,7 @@ static bool debug(char command,const char *args) {
 }
 #endif
 void setup() {
-    chgame.boot();dbg::begin("BLOOM 1.1.1");
+    chgame.boot();dbg::begin("BLOOM 1.1.2");
 #if CHGAME_DEBUG
     dbg::hook=debug;
 #endif

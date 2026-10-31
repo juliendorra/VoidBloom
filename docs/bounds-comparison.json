@@ -1,0 +1,94 @@
+{
+  "before_version": "1.1.1",
+  "after_version": "1.1.2",
+  "method": "same 48 seeds, 100/150/200 ms observation and input cadence, six-minute limit, no cheats; only the movement bounds and pilot knowledge of those bounds change",
+  "before": {
+    "completed": 48,
+    "pilots": 48,
+    "deaths": 24,
+    "bombs": 435,
+    "median_seconds": 190.41
+  },
+  "after": {
+    "completed": 48,
+    "pilots": 48,
+    "deaths": 37,
+    "bombs": 459,
+    "median_seconds": 191.94
+  },
+  "per_wave_deaths": [
+    {
+      "wave": 1,
+      "before": 0,
+      "after": 0
+    },
+    {
+      "wave": 2,
+      "before": 0,
+      "after": 0
+    },
+    {
+      "wave": 3,
+      "before": 0,
+      "after": 0
+    },
+    {
+      "wave": 4,
+      "before": 0,
+      "after": 0
+    },
+    {
+      "wave": 5,
+      "before": 0,
+      "after": 0
+    },
+    {
+      "wave": 6,
+      "before": 1,
+      "after": 1
+    },
+    {
+      "wave": 7,
+      "before": 0,
+      "after": 0
+    },
+    {
+      "wave": 8,
+      "before": 1,
+      "after": 1
+    },
+    {
+      "wave": 9,
+      "before": 3,
+      "after": 2
+    },
+    {
+      "wave": 10,
+      "before": 4,
+      "after": 8
+    },
+    {
+      "wave": 11,
+      "before": 10,
+      "after": 10
+    },
+    {
+      "wave": 12,
+      "before": 5,
+      "after": 15
+    }
+  ],
+  "limitations": [
+    "Heuristic agents with delayed observations and bounded inputs, not actual human playtests.",
+    "Simulation is accelerated in wall time; every game update is exactly 1/60 second.",
+    "Campaign pilots use no cheats. Passive pressure fixtures use invulnerability and are reported separately.",
+    "The game is endless. Completion here means clearing wave 12 and reaching wave 13.",
+    "Boss peaks are followed by recovery waves; the phase-level ramp is measured separately from these peaks."
+  ],
+  "boundary_checks": {
+    "cases": 80,
+    "passed": 80,
+    "torn_frames": 0,
+    "full_sprite_including_exhaust_and_focus": true
+  }
+}
