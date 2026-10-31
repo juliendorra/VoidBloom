@@ -1,0 +1,14 @@
+VOID BLOOM
+
+Original game rules, pixel artwork, and pulse motif created for this project.
+An original retro arcade shooter and bullet-heavy shoot 'em up.
+
+Uses CHGame, copyright 2026 Kevin Bates (bateske), Apache License 2.0.
+CHGame library notice: CHGame - the library for the CHGame handheld, and the
+casino games built on it. See the included CHGame license and notice.
+
+Uses CHGfx, copyright 2026 bateske, MIT; the CHGame board package is MIT.
+Copies of dependency licenses are included under licenses/.
+
+The optional browser artifact uses CHGame Emulator, copyright 2026
+joyrider3774, MIT. Its license is embedded in that artifact.

@@ -1,0 +1,16 @@
+{
+  "id": "void-bloom",
+  "title": "VOID BLOOM",
+  "version": "1.1.1",
+  "description": "An endless evolving arcade shooter. Marching monochrome invaders gain color, loop out of formation and dive before blooming into free flight, spread weapons, grazing and neon bullet storms. Five weapon stages, three boss patterns, focus movement and panic bombs.",
+  "genre": "Shooter",
+  "cartImage": "docs/cart.png",
+  "licenseFiles": ["NOTICE", "licenses/CHGame-Apache-2.0.txt", "licenses/CHGame-NOTICE.txt", "licenses/CHGfx-MIT.txt", "licenses/Board-MIT.txt"],
+  "buttons": [
+    {"control": "DPAD", "action": "Move; free flight unlocks on wave 3"},
+    {"control": "A", "action": "Hold to shoot; confirm; restart"},
+    {"control": "B", "action": "Hold for slow focus movement and focused fire; title: controls; pause: quit"},
+    {"control": "SELECT", "action": "Screen-clearing bomb; title/pause: mute"},
+    {"control": "START", "action": "Pause/resume; hold 3 seconds for console menu"}
+  ]
+}

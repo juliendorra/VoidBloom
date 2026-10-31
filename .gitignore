@@ -1,0 +1,8 @@
+build/
+out/
+tools/chsim/build/
+tools/tests/build/
+__pycache__/
+.deps/
+.venv
+.DS_Store

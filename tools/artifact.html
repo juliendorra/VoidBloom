@@ -1,0 +1,134 @@
+<div id="void-bloom-artifact">
+  <style>
+    #void-bloom-artifact { color:var(--foreground); }
+    #void-bloom-artifact .vb-stage { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:24px; margin:16px 0; }
+    #void-bloom-artifact .vb-screen { width:min(100%,384px); flex:0 1 384px; }
+    #void-bloom-artifact canvas { display:block; width:100%; aspect-ratio:512/536; image-rendering:pixelated; background:var(--background); }
+    #void-bloom-artifact .vb-controls { display:grid; gap:12px; justify-items:center; }
+    #void-bloom-artifact .vb-pad { display:grid; grid-template-columns:repeat(3,48px); gap:4px; }
+    #void-bloom-artifact .vb-pad .btn { touch-action:none; user-select:none; }
+    #void-bloom-artifact .vb-action { touch-action:none; user-select:none; }
+    #void-bloom-artifact .vb-captures { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin-top:16px; }
+    #void-bloom-artifact figure { margin:0; min-width:0; }
+    #void-bloom-artifact figure img { width:100%; display:block; image-rendering:pixelated; }
+    #void-bloom-artifact figcaption { margin-top:6px; text-align:center; }
+    #void-bloom-artifact .vb-help { max-width:235px; text-align:center; }
+    #void-bloom-artifact .vb-license { margin-top:12px; }
+    @media(max-width:520px) { #void-bloom-artifact .vb-captures { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+  </style>
+  <div class="viz-row">
+    <h3>Void Bloom · @@VERSION@@</h3>
+    <button type="button" class="btn btn-primary" id="vb-load">Load cartridge</button>
+    <span class="text-small text-muted" id="vb-status" role="status" aria-live="polite">CHGame web emulator · real cartridge</span>
+  </div>
+  <div class="vb-stage">
+    <div class="vb-screen">
+      <canvas id="canvas" width="512" height="536" role="img" aria-label="Void Bloom running in the CHGame RISC-V web emulator"></canvas>
+    </div>
+    <div class="vb-controls">
+      <div class="vb-pad" aria-label="Directional controls">
+        <span></span><button type="button" class="btn" data-code="ArrowUp" aria-label="Move up">↑</button><span></span>
+        <button type="button" class="btn" data-code="ArrowLeft" aria-label="Move left">←</button><span></span><button type="button" class="btn" data-code="ArrowRight" aria-label="Move right">→</button>
+        <span></span><button type="button" class="btn" data-code="ArrowDown" aria-label="Move down">↓</button><span></span>
+      </div>
+      <div class="viz-row">
+        <button type="button" class="btn vb-action" data-code="KeyX">A · Fire</button>
+        <button type="button" class="btn vb-action" data-code="KeyZ">B · Focus</button>
+      </div>
+      <div class="viz-row">
+        <button type="button" class="btn vb-action" data-code="ShiftRight">Bomb</button>
+        <button type="button" class="btn vb-action" data-code="Enter">Start / Pause</button>
+      </div>
+      <div class="vb-help text-small text-muted">Arrows move · X / Space fire · Z focus · Right Shift bomb · Enter pause</div>
+    </div>
+  </div>
+  <div class="vb-captures" aria-label="Six progression captures from the CHGame simulator">
+    <figure><img src="@@ORIGIN@@" alt="Monochrome marching aliens in the opening wave"><figcaption>Origin · 1</figcaption></figure>
+    <figure><img src="@@AWAKENING@@" alt="A pale cyan invader leaves its formation to loop upward and dive"><figcaption>Awaken · 2</figcaption></figure>
+    <figure><img src="@@VECTOR@@" alt="Cyan and pink ships with twin fire and free movement"><figcaption>Vector · 3</figcaption></figure>
+    <figure><img src="@@SURGE@@" alt="Spread weapons against radial bullets"><figcaption>Surge · 5</figcaption></figure>
+    <figure><img src="@@NOVA@@" alt="A rotating bloom boss firing dense bullets"><figcaption>Nova · 8</figcaption></figure>
+    <figure><img src="@@INFINITY@@" alt="Full power against the densest rotating boss pattern"><figcaption>Infinity · 12</figcaption></figure>
+  </div>
+  <div class="text-small text-muted vb-license">Simulator captures; later waves staged. Emulator: joyrider3774, MIT. <details><summary>Credits and license</summary><pre>@@LICENSE@@</pre></details></div>
+</div>
+<script>
+var Module;
+(() => {
+  const root=document.getElementById('void-bloom-artifact');
+  let canvas=root.querySelector('canvas');
+  const status=root.querySelector('#vb-status');
+  const load=root.querySelector('#vb-load');
+  const firmware='@@FIRMWARE@@';
+  const wasm='@@WASM@@';
+  const decode=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+  const held=new Set();
+  const pressedAt=new Map(),releaseTimers=new Map();
+  let launched=false,ready=false;
+  const keyMap={ArrowUp:['ArrowUp',38],ArrowDown:['ArrowDown',40],ArrowLeft:['ArrowLeft',37],ArrowRight:['ArrowRight',39],KeyX:['x',88],KeyZ:['z',90],ShiftRight:['Shift',16],Enter:['Enter',13]};
+  function send(code,down,immediate=false) {
+    if(!ready)return;
+    clearTimeout(releaseTimers.get(code));releaseTimers.delete(code);
+    // A short mouse/touch click must span enough emulated frames to reach
+    // the handheld's 60 Hz button poll. Real held keys remain held normally.
+    if(!down && !immediate && held.has(code)) {
+      const remaining=65-(performance.now()-(pressedAt.get(code)||0));
+      if(remaining>0) {releaseTimers.set(code,setTimeout(()=>send(code,false,true),remaining));return;}
+    }
+    if(down===held.has(code))return;
+    if(down){held.add(code);pressedAt.set(code,performance.now());}else held.delete(code);
+    const [key,keyCode]=keyMap[code];
+    document.dispatchEvent(new KeyboardEvent(down?'keydown':'keyup',{key,code,keyCode,which:keyCode,location:code==='ShiftRight'?2:0,bubbles:true,cancelable:true}));
+  }
+  root.querySelectorAll('[data-code]').forEach(button=>{
+    const code=button.dataset.code;
+    button.addEventListener('pointerdown',event=>{event.preventDefault();button.setPointerCapture(event.pointerId);send(code,true);});
+    button.addEventListener('pointerup',()=>send(code,false));
+    button.addEventListener('pointercancel',()=>send(code,false));
+    button.addEventListener('lostpointercapture',()=>send(code,false));
+    button.addEventListener('keydown',event=>{if(event.key===' '||event.key==='Enter'){event.preventDefault();event.stopPropagation();send(code,true);}});
+    button.addEventListener('keyup',event=>{if(event.key===' '||event.key==='Enter'){event.preventDefault();event.stopPropagation();send(code,false);}});
+  });
+  window.addEventListener('blur',()=>{for(const code of [...held])send(code,false);});
+  load.addEventListener('click',()=>{
+    if(launched) {
+      for(const code of [...held])send(code,false);
+      Module.ccall('chg_web_load','number',['string'],['/roms/VoidBloom.bin']);
+      status.textContent='Ready · press A / X to begin';
+      return;
+    }
+    launched=true;load.disabled=true;status.textContent='Starting CHGame…';
+    const fresh=canvas.cloneNode();canvas.replaceWith(fresh);canvas=fresh;
+    Module={
+      canvas,
+      instantiateWasm(imports,done) {
+        (async()=>{
+          const stream=new Blob([decode(wasm)]).stream().pipeThrough(new DecompressionStream('gzip'));
+          const bytes=await new Response(stream).arrayBuffer();
+          const result=await WebAssembly.instantiate(bytes,imports);
+          done(result.instance,result.module);
+        })().catch(error=>{status.textContent='Emulator could not start: '+error.message;load.disabled=false;launched=false;});
+        return {};
+      },
+      setStatus(message) {if(message)status.textContent=message;},
+      print() {},
+      printErr(message) {if(/abort|fault|error/i.test(message))status.textContent=message;},
+      postRun:[()=>{
+        const FS=Module.FS;
+        try{FS.mkdir('/roms');}catch{}
+        FS.writeFile('/roms/VoidBloom.bin',decode(firmware));
+        if(!Module.ccall('chg_web_load','number',['string'],['/roms/VoidBloom.bin']))throw new Error('Cartridge load failed');
+        ready=true;load.disabled=false;load.textContent='Restart';
+        status.textContent='Ready · press A / X to begin';
+      }]
+    };
+    startVoidBloomEmulator(Module);
+  });
+  const title=new Image();title.onload=()=>{
+    if(!launched){const c=canvas.getContext('2d');c.imageSmoothingEnabled=false;c.drawImage(title,0,0,512,512);}
+  };title.src='@@TITLE@@';
+})();
+function startVoidBloomEmulator(Module) {
+@@RUNTIME@@
+}
+</script>

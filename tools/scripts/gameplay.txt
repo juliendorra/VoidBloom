@@ -1,0 +1,17 @@
+# Ordinary buttons on the standard CHGame simulator; no staging commands.
+rec start 6
+wait 90
+rec stop 01_title
+tap A
+wait 60
+hold A
+rec start 6
+wait 180
+rec stop 02_origin
+hold A+LEFT
+rec start 6
+wait 80
+hold A+RIGHT
+wait 140
+rec stop 03_sweep
+release
