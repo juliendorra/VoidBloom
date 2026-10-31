@@ -15,7 +15,7 @@ unsigned rnd(unsigned n) {randomState^=randomState<<13;randomState^=randomState>
 int absval(int v) {return v<0?-v:v;}
 float bounded(float v,float a,float b) {return v<a?a:v>b?b:v;}
 struct Decision {unsigned keys=Fire;float danger=0;};
-Decision choose(Game &s,unsigned id,unsigned delay,int ownX,int ownY,bool allowFocus=true) {
+Decision choose(Game &s,unsigned id,unsigned delay,int ownX,int ownY,bool allowFocus=true,int patrolY=0) {
     // Extrapolate the delayed visible trajectories by the known observation
     // lag. The pilot knows its own movement, like a person holding a D-pad.
     s.px=ownX;s.py=ownY;
@@ -58,7 +58,8 @@ Decision choose(Game &s,unsigned id,unsigned delay,int ownX,int ownY,bool allowF
         }
         float endX=bounded(x0+dx*speed*12,PLAYER_MIN_X,PLAYER_MAX_X);
         float endY=bounded(y0+dy*speed*12,PLAYER_MIN_Y,PLAYER_MAX_Y);
-        cost=danger*4+absval(int(endX-target))*.24f+fabsf(endY-(109+(id%3)*3))*.25f;
+        int targetY=patrolY?patrolY:109+(id%3)*3;
+        cost=danger*4+absval(int(endX-target))*.24f+fabsf(endY-targetY)*.25f;
         if(endY<90)cost+=(90-endY)*3;
         cost+=focus?.16f:0;cost+=dx==0&&dy==0?0:.08f;
         // Avoid prolonged edge camping, where half of the escape directions vanish.
@@ -86,6 +87,29 @@ Decision choose(Game &s,unsigned id,unsigned delay,int ownX,int ownY,bool allowF
 }
 }
 int main(int argc,char **argv) {
+    if(argc==3 && !strcmp(argv[1],"--readme-run")) {
+        // One ordinary campaign, replayed from the title screen by the
+        // simulator. Patrol between vertical bands to demonstrate free
+        // flight; the normal benchmark's pilot preferences stay unchanged.
+        unsigned seed=unsigned(strtoul(argv[2],nullptr,0));
+        g.begin(seed);perceived=g;older=g;randomState=seed;
+        puts("[");
+        for(unsigned t=0;t<60*360 && g.screen!=Over && g.wave<13;t+=6) {
+            static Game observation;observation=perceived;
+            int targetY=g.phase?((g.age/120)%2?84:108):0;
+            unsigned keys=choose(perceived,0,6,g.px,g.py,true,targetY).keys;
+            older=observation;perceived=g;
+            if(rnd(40)==0)keys&=~(Left|Right|Up|Down);
+            if(g.screen==Evolution)keys=0;
+            unsigned events=0;
+            for(unsigned i=0;i<6;++i) {g.update(keys);events|=g.events;}
+            unsigned flight=0;for(const auto &e:g.enemies)if(e.kind && e.flight>flight)flight=e.flight;
+            printf("%s{\"keys\":%u,\"screen\":%u,\"wave\":%u,\"phase\":%u,\"lives\":%u,\"score\":%lu,\"tick\":%lu,\"bombs\":%u,\"x\":%d,\"y\":%d,\"bullets\":%u,\"enemies\":%u,\"transition\":%u,\"invincible\":%u,\"focus\":%u,\"events\":%u,\"flight\":%u}",
+                t?",\n":"",keys,g.screen,g.wave,g.phase,g.lives,(unsigned long)g.score,(unsigned long)g.tick,g.bombs,
+                g.px,g.py,g.liveBullets(),g.liveEnemies(),g.transition,g.invincible,unsigned(g.focus),events,flight);
+        }
+        puts("\n]");return g.wave>=13?0:1;
+    }
     if(argc==5 && !strcmp(argv[1],"--capture")) {
         // Export normal controls from the same delayed-observation pilot.
         // The simulator replays these and verifies that state stays in sync.

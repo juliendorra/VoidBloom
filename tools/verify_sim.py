@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Exercise the normal CHGame simulator, then capture staged late-wave fixtures."""
+"""Exercise the simulator, then refresh screenshots and a normal-play preview."""
 from pathlib import Path
 import json
+import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -9,7 +10,7 @@ from chgame_env import chgame_root
 sys.path.insert(0, str(chgame_root() / 'tools/chsim'))
 from chsim import build
 from chdrivelib import Driver, SimTransport, mask_of
-from fbimage import to_image, sheet, save_gif
+from fbimage import to_image, sheet
 
 def connect(exe):
     transport = SimTransport(exe)
@@ -28,12 +29,12 @@ def main():
     out = ROOT / 'out/simulator'; out.mkdir(parents=True, exist_ok=True)
     docs = ROOT / 'docs'; docs.mkdir(exist_ok=True)
     transport, d = connect(build(ROOT))
-    frames = []; captures = []
+    captures = []
     try:
         assert state(d)[0] == 0
         if capture:
             title = to_image(d.shot(), 3)
-            title.save(docs / 'title.png'); frames += [title] * 10
+            title.save(docs / 'title.png')
         tap(d, 'B'); assert state(d)[0] == 1
         tap(d, 'A'); assert state(d)[0] == 0
         tap(d, 'SELECT'); assert state(d)[16] == 1
@@ -50,8 +51,7 @@ def main():
         if capture:
             img = to_image(d.shot(), 3); img.save(docs / 'origin.png'); captures.append(img)
             d.buttons(mask_of('A'))
-            for _ in range(24):
-                d.frames(6); frames.append(to_image(d.shot(), 3))
+            d.frames(144)
             d.buttons(0)
         bombs = state(d)[6]; tap(d, 'SELECT'); assert state(d)[6] == bombs - 1
         tap(d, 'START'); tap(d, 'B'); assert state(d)[0] == 0
@@ -67,14 +67,9 @@ def main():
                                      ('nova', 8, 310), ('infinity', 12, 530)]:
                 d.cmd(f'J {wave}'); d.buttons(0)
                 if wave == 2:
-                    # Show the whole charge -> upward curl -> dive -> return,
-                    # instead of cutting into the middle of its first loop.
-                    d.frames(90)
-                    for i in range(36):
-                        d.frames(6)
-                        img = to_image(d.shot(), 3); frames.append(img)
-                        if i == 5:
-                            img.save(docs / 'awakening.png'); captures.append(img)
+                    d.frames(126)
+                    img = to_image(d.shot(), 3)
+                    img.save(docs / 'awakening.png'); captures.append(img)
                     continue
                 if wave == 4:
                     d.frames(wait)
@@ -83,22 +78,20 @@ def main():
                         d.frames(10)
                         count = state(d)[10]
                         assert count <= 12, 'first boss exceeded its encounter budget'
-                        img = to_image(d.shot(), 3); frames.append(img)
                         if count > peak:
-                            peak = count; img.save(docs / 'first-boss.png')
+                            peak = count; to_image(d.shot(), 3).save(docs / 'first-boss.png')
                     continue
                 d.frames(wait-24)
                 d.buttons(mask_of('A')); d.frames(24); d.buttons(0)
                 assert state(d)[1] == wave
                 img = to_image(d.shot(), 3); img.save(docs / f'{name}.png'); captures.append(img)
-                for _ in range(30):
-                    d.frames(6); frames.append(to_image(d.shot(), 3))
             assert not transport.bugs, transport.bugs
         finally:
             transport.close()
         sheet(captures, cols=3).save(docs / 'evolution.png')
-        save_gif(frames, docs / 'gameplay.gif', 100)
-        assert (docs / 'gameplay.gif').stat().st_size < 1_000_000
+        # The README shows ordinary play from a single uninterrupted run.
+        # Stage fixtures above are only for the separate static gallery.
+        subprocess.run([sys.executable, str(ROOT/'tools/capture_readme.py')], check=True)
     (out / 'results.json').write_text(json.dumps({
         'normal_simulator': ['title', 'help', 'mute', 'start', 'vertical lock',
                              'pause state/pixels', 'resume', 'fire', 'bomb', 'quit'],

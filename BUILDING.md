@@ -54,14 +54,24 @@ pages. The save identifier is `VBLM`.
 
 ```sh
 python tools/verify_sim.py --capture
+python tools/capture_readme.py
 python tools/verify_boundaries.py
 python tools/capture_levels.py
 ```
 
-The first command updates the README montage and progression screenshots.
-The second records GIFs for waves 1–12 in `docs/captures/`. These clips use
-the separate simulator-only stage-selection fixture. Normal firmware and
-the ordinary simulator do not contain stage-selection commands.
+`verify_sim.py --capture` updates the progression screenshots and README
+preview. `capture_readme.py` can recreate just that preview: it starts at
+the title screen, replays one ordinary campaign through wave 12, and picks
+active excerpts with horizontal and vertical movement. It keeps normal
+play speed, uses no stage jumps, and writes motion and timing details to
+`docs/gameplay.json`. The pilot uses a vertical patrol preference for this
+preview; benchmark pilots retain their usual preferences.
+
+`verify_boundaries.py` checks the full sprite at the movement limits.
+`capture_levels.py` records individual GIFs for waves 1–12 in
+`docs/captures/`. These separate clips stage wave starts with the
+simulator-only capture fixture. Normal firmware and the ordinary simulator
+do not contain stage-selection commands.
 
 ## Offline web emulator
 

@@ -1,0 +1,94 @@
+{
+  "game_version": "1.1.2",
+  "source": "Actual framebuffer of the normal CHGame simulator; one campaign from the title screen through wave 12",
+  "controls": "100 ms delayed-observation pilot with ordinary fire, focus, movement and bombs; vertical patrol preference for the preview only",
+  "cheats": false,
+  "stage_jumps": false,
+  "torn_frames": 0,
+  "seed": 725025,
+  "campaign_seconds": 180.3,
+  "reached_wave": 13,
+  "replay_state_comparisons": 1803,
+  "gif_duration_ms": 17400,
+  "gif_dimensions": [
+    256,
+    256
+  ],
+  "gif_samples_per_second": 15,
+  "gif_bytes": 776191,
+  "gif_sha256": "b48da4b105cb65871858f621a2c0dfb709921d3af9b38c934ed8e131733e8f8a",
+  "clips": [
+    {
+      "name": "wave-01",
+      "wave": 1,
+      "start_frame": 192,
+      "end_frame": 288,
+      "horizontal_pixels": 67.5,
+      "vertical_pixels": 0.0,
+      "moving_fraction": 0.933,
+      "firing_fraction": 1.0
+    },
+    {
+      "name": "wave-02",
+      "wave": 2,
+      "start_frame": 744,
+      "end_frame": 912,
+      "horizontal_pixels": 75.0,
+      "vertical_pixels": 0.0,
+      "moving_fraction": 0.778,
+      "firing_fraction": 1.0
+    },
+    {
+      "name": "evolution-03",
+      "wave": 3,
+      "start_frame": 936,
+      "end_frame": 972
+    },
+    {
+      "name": "wave-03",
+      "wave": 3,
+      "start_frame": 1488,
+      "end_frame": 1656,
+      "horizontal_pixels": 85.3125,
+      "vertical_pixels": 18.0,
+      "moving_fraction": 0.778,
+      "firing_fraction": 1.0
+    },
+    {
+      "name": "evolution-05",
+      "wave": 5,
+      "start_frame": 2820,
+      "end_frame": 2856
+    },
+    {
+      "name": "wave-05",
+      "wave": 5,
+      "start_frame": 3528,
+      "end_frame": 3696,
+      "horizontal_pixels": 80.625,
+      "vertical_pixels": 15.75,
+      "moving_fraction": 0.889,
+      "firing_fraction": 1.0
+    },
+    {
+      "name": "wave-07",
+      "wave": 7,
+      "start_frame": 5100,
+      "end_frame": 5268,
+      "horizontal_pixels": 79.3125,
+      "vertical_pixels": 18.375,
+      "moving_fraction": 0.852,
+      "firing_fraction": 1.0
+    },
+    {
+      "name": "wave-12",
+      "wave": 12,
+      "start_frame": 9672,
+      "end_frame": 9840,
+      "horizontal_pixels": 83.8125,
+      "vertical_pixels": 15.5625,
+      "moving_fraction": 0.778,
+      "firing_fraction": 1.0
+    }
+  ]
+}

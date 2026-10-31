@@ -2,7 +2,9 @@
 
 An endless arcade shooter that starts with monochrome marching invaders and transforms into a neon bullet storm. Evolve your ship, thread the gaps, and bring down the Bloom Cores.
 
-![Void Bloom gameplay](docs/gameplay.gif)
+![Void Bloom gameplay](docs/gameplay.gif?preview=b48da4b105cb)
+
+Normal-speed excerpts from one simulator campaign, showing movement, focused fire, and weapon upgrades.
 
 ## Controls
 
