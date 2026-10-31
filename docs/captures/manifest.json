@@ -1,0 +1,129 @@
+{
+  "game_version": "1.1.1",
+  "source": "CHGame simulator; actual game rules and framebuffer",
+  "capture": "staged wave starts; scripted opening controls and delayed-observation pilot replay; normal damage, no invulnerability",
+  "timing": "60 Hz simulation, one GIF frame per 6 updates, 100 ms per GIF frame; real play speed",
+  "torn_frames": 0,
+  "clips": [
+    {
+      "wave": 1,
+      "file": "wave-01-origin.gif",
+      "moment": "Marching formation and single-shot fire",
+      "duration_ms": 6000,
+      "size_bytes": 195281,
+      "sha256": "96e830a2d012f8cb573de2c7530a0aeaac6dc06f004d85182dfc591a1049eb7c",
+      "peak_hostile_bullets": 2,
+      "lives_lost": 0
+    },
+    {
+      "wave": 2,
+      "file": "wave-02-awaken.gif",
+      "moment": "Charge, upward loop, committed dive, and return",
+      "duration_ms": 6000,
+      "size_bytes": 213700,
+      "sha256": "a137b2a894dcb071952c2d832978e096c5826eae85643ce086c641411e92aaa9",
+      "peak_hostile_bullets": 3,
+      "lives_lost": 0
+    },
+    {
+      "wave": 3,
+      "file": "wave-03-vector.gif",
+      "moment": "Free flight and twin shot against moving attackers",
+      "duration_ms": 6000,
+      "size_bytes": 185048,
+      "sha256": "2b09200c848f82deb4763e32b7cdb23d5243bc7ab7ecf2d29fd576730e9bc641",
+      "peak_hostile_bullets": 4,
+      "lives_lost": 0
+    },
+    {
+      "wave": 4,
+      "file": "wave-04-first-boss.gif",
+      "moment": "Rings, aimed fans, rotating streams, and recovery beats",
+      "duration_ms": 10000,
+      "size_bytes": 325868,
+      "sha256": "f3d724976c7b3d4bd1e96f362fea73118ed66b92b76d72f4b1c69c08a0092401",
+      "peak_hostile_bullets": 12,
+      "lives_lost": 0
+    },
+    {
+      "wave": 5,
+      "file": "wave-05-surge.gif",
+      "moment": "Three-way spread and the first radial volleys",
+      "duration_ms": 6000,
+      "size_bytes": 289270,
+      "sha256": "6db56cc687a1c6cb36606a2f5327bef32dff250d6786afaaa0302141c02f5c85",
+      "peak_hostile_bullets": 13,
+      "lives_lost": 0
+    },
+    {
+      "wave": 6,
+      "file": "wave-06-focused-spread.gif",
+      "moment": "Spread fire and dodging between turret volleys",
+      "duration_ms": 6000,
+      "size_bytes": 313521,
+      "sha256": "c4b3995e20d15153bf94db83ca1e4d9b44a5067376143f8d94f6814f2deb26e5",
+      "peak_hostile_bullets": 17,
+      "lives_lost": 0
+    },
+    {
+      "wave": 7,
+      "file": "wave-07-nova.gif",
+      "moment": "Five-way fire through weaving attackers",
+      "duration_ms": 6000,
+      "size_bytes": 307840,
+      "sha256": "0031896365a7474956bbe9756700ca205c3e723c48a4adc11337cf3bf36b0139",
+      "peak_hostile_bullets": 28,
+      "lives_lost": 0
+    },
+    {
+      "wave": 8,
+      "file": "wave-08-nova-boss.gif",
+      "moment": "Denser boss rings, fans, and rotating streams",
+      "duration_ms": 10000,
+      "size_bytes": 555735,
+      "sha256": "1c4e395f9f932e28ab751630d1b22ded56d0b44ac50063286247731eabcbbb6b",
+      "peak_hostile_bullets": 55,
+      "lives_lost": 0
+    },
+    {
+      "wave": 9,
+      "file": "wave-09-infinity.gif",
+      "moment": "Full-power fire and stronger moving enemies",
+      "duration_ms": 6000,
+      "size_bytes": 325027,
+      "sha256": "e83a75fddc96e17e353eceb01c9cf603c858319c1effb327b0e6818c14c09994",
+      "peak_hostile_bullets": 32,
+      "lives_lost": 0
+    },
+    {
+      "wave": 10,
+      "file": "wave-10-panic-bomb.gif",
+      "moment": "A bomb clears a barrage before the attack resumes",
+      "duration_ms": 6000,
+      "size_bytes": 324940,
+      "sha256": "c9e6ee5ceecbdb8cbeaf65060d3e0abbedf6e57d7b1458156371b6cb32f879b2",
+      "peak_hostile_bullets": 30,
+      "lives_lost": 0
+    },
+    {
+      "wave": 11,
+      "file": "wave-11-endless-pressure.gif",
+      "moment": "Full-power fire under sustained pressure",
+      "duration_ms": 6000,
+      "size_bytes": 323341,
+      "sha256": "147d4333d19a8a4f39331d5e2d6a6af85ca9dc4fcc38c7e743178adb44a0294e",
+      "peak_hostile_bullets": 33,
+      "lives_lost": 0
+    },
+    {
+      "wave": 12,
+      "file": "wave-12-infinity-boss.gif",
+      "moment": "The first full-progression boss and its largest patterns",
+      "duration_ms": 10000,
+      "size_bytes": 608377,
+      "sha256": "148b6a60cd51d02fbc4b84d6449083902fcc69041ed9ad3d9281971c380d096c",
+      "peak_hostile_bullets": 101,
+      "lives_lost": 0
+    }
+  ]
+}

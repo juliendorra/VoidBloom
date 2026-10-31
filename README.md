@@ -51,6 +51,8 @@ From a source checkout, use `python3 chgame.py build`, then `python3 chgame.py e
 - [tools/tests/pilots.cpp](tools/tests/pilots.cpp) runs delayed-observation pilots using ordinary buttons; pressure fixtures are separate from no-cheat campaign runs.
 - [NOTES.md](NOTES.md) describes validation, captures, packaging, and the offline web-emulator artifact.
 
+Browse the [wave-by-wave GIF gallery](docs/captures/README.md) for key moments from waves 1–12, or recreate it with `python3 tools/capture_levels.py`.
+
 ## Credits
 
 Original game rules, artwork, and pulse motif for a retro arcade shooter and bullet-heavy shoot 'em up. Uses Kevin Bates' CHGame / CHGfx libraries and the CHGame board package. Browser preview uses joyrider3774's CHGame emulator (MIT), executing the compiled RISC-V firmware.
