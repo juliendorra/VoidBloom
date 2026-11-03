@@ -29,7 +29,7 @@ def movement(rows):
         'horizontal_pixels': (max(x for x, y in positions)-min(x for x, y in positions))/64,
         'vertical_pixels': (max(y for x, y in positions)-min(y for x, y in positions))/64,
         'moving_fraction': round(sum(a != b for a, b in zip(positions, positions[1:]))/(len(positions)-1), 3),
-        'firing_fraction': round(sum(bool(r['keys'] & 3) for r in rows)/len(rows), 3),
+        'firing_fraction': round(sum(bool(r['keys'] & 1) for r in rows)/len(rows), 3),
     }
 
 
@@ -65,8 +65,8 @@ def choose_excerpt(plan, wave, length):
 def evolution_excerpt(plan, wave):
     for i in range(0, len(plan)-6, 2):
         rows = plan[i:i+6]
-        if all(r['screen'] == 4 and r['wave'] == wave and 65 <= r['transition'] <= 115 for r in rows):
-            return {'name': f'evolution-{wave:02d}', 'wave': wave, 'start_frame': i*6, 'end_frame': i*6+36}
+        if all(r['screen'] == 4 and r['wave'] == wave and (70 <= r['transition'] <= 180 if wave == 5 else 65 <= r['transition'] <= 115) for r in rows):
+            return {'name': f'evolution-{wave:02d}', 'wave': wave, 'start_frame': i*6, 'end_frame': i*6+(108 if wave == 5 else 36)}
     raise AssertionError(f'Missing natural evolution before wave {wave}')
 
 
@@ -82,6 +82,7 @@ def record():
         assert state(driver)[0] == 0
         for _ in range(9):
             driver.frames(4); title.append(to_image(driver.shot(), 1))
+        driver.frames(3)  # Reproducible showcase seed; ordinary title-screen wait.
         # The title advances its clock before handling the start-button edge.
         seed = 0xB1006 ^ (state(driver)[5]+1)
         run = subprocess.run([str(pilot), '--readme-run', str(seed)], capture_output=True, text=True, check=True)
@@ -119,6 +120,8 @@ def record():
         assert not transport.bugs, transport.bugs
     finally:
         transport.close()
+    unlock = next(c['frames'] for c in clips if c['name']=='evolution-05')
+    save_gif([f.resize((384,384), Image.Resampling.NEAREST) for f in unlock], docs/'focus-unlock.gif', [60,70,70]*(len(unlock)//3))
     native_frames = title+[frame for clip in clips for frame in clip['frames']]
     assert len(native_frames) % 3 == 0
     # GIF time is quantized to 10 ms. Three samples cover twelve updates:

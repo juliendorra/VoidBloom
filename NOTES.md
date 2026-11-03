@@ -76,3 +76,11 @@ python3 tools/make_artifact.py --emulator /path/to/CHGame_Emulator-web --output 
 ```
 
 The resulting `manifest.json` records SHA-256 hashes of firmware and emulator. Native firmware sanity checks use the existing `chg_headless_fixed` binary in `.cache/chgame-emulator-review/`; the emulator and native simulator have different purposes and both are exercised.
+
+## Gun controls (1.2.0)
+
+B now uses a panic bomb. SELECT toggles wide and narrow fire from wave 5 onward; waves 1–4 have no spread to narrow, so SELECT has no gameplay action there. The first spread-weapon transition pauses combat for an animated “Focus fire with Select!” introduction. Every switch shows “Switched gun!” and a mode label. A cyan circle remains around the ship in narrow mode. Movement stays at full speed in either mode, and only A fires the weapon. The selection persists across waves. Bomb-counter icons are cyan rings with white center dots.
+
+The same 48 campaign seeds all cleared wave 12 with 100–200 ms delayed observations and input cadence. This control-aware pilot chooses full-speed directions and presses SELECT for narrow fire on wave 6 and bosses, using ordinary button edges. It no longer chooses slow movement. The new runs recorded 53 deaths and 471 bombs, with a median clear time of 183.26 seconds; 1.1.2 recorded 37 deaths, 459 bombs and 191.94 seconds. Both controls and the pilot policy changed, so this comparison does not isolate a single causal effect. These are heuristic simulations, not actual human playtests. Enemy patterns and bullet caps are unchanged; passive pressure remains progressive and all 24 movement-only first-boss pilots survived without hits.
+
+Rules checks cover early-wave lockout, one toggle per press, no automatic firing from SELECT, equal movement speed, shot velocities, mode persistence, the first unlock, and paused animation timers. The actual simulator verifies physical B bombs and SELECT switching, plus 80 complete-sprite boundary cases. The README replay reaches wave 13 with 1,843 matching state samples and shows horizontal and vertical flight. `docs/focus-unlock.gif` shows the introduction, and the wave-6 capture shows animated switching and the persistent circle.

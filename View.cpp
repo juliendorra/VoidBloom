@@ -163,7 +163,11 @@ void hud(const bloom::Game &g) {
     for(unsigned i=0;i<g.lives;++i) {
         gfx_hline(3+i*6,125,5,White);gfx_vline(5+i*6,122,4,White);
     }
-    text35(37,122,"B",Dim);for(unsigned i=0;i<g.bombs;++i)gfx_rect(43+i*4,122,3,5,Cyan);
+    text35(37,122,"B",Dim);
+    for(unsigned i=0;i<g.bombs;++i) {
+        int x=45+i*6;
+        gfx_circle(x,124,2,Cyan);gfx_pixel(x,124,White);
+    }
     const char *name=g.wave==2?"AWAKEN":bloom::phaseName(g.phase);
     text35(126-text35Width(name),122,name,g.phase>=3?Pink:g.wave==2?Cyan:Dim);
     for(const auto &e:g.enemies)if(e.kind==bloom::Boss) {
@@ -198,7 +202,7 @@ void title(const bloom::Game &g) {
 }
 void help() {
     center(8,"EVOLVE OR FALL",Pink);
-    const char *lines[]={"PAD: MOVE","A: HOLD TO FIRE","B: SLOW + FOCUSED FIRE","SELECT: PANIC BOMB","START: PAUSE","","WAVE 3: FREE FLIGHT","WAVE 5: SPREAD + GRAZE","WAVE 7: FIVE-WAY FIRE","WAVE 9: INFINITY","","NEAR MISSES BUILD SCORE","40 GRAZES: EXTRA BOMB"};
+    const char *lines[]={"PAD: MOVE","A: HOLD TO FIRE","B: PANIC BOMB","SELECT: WIDE / NARROW","START: PAUSE","","WAVE 3: FREE FLIGHT","WAVE 5: GUN TOGGLE + GRAZE","WAVE 7: FIVE-WAY FIRE","WAVE 9: INFINITY","","NEAR MISSES BUILD SCORE","40 GRAZES: EXTRA BOMB"};
     for(unsigned i=0;i<13;++i)center(22+i*7,lines[i],i<5?White:i==11||i==12?Gold:Dim);
     center(121,"A / B BACK",Cyan);
 }
@@ -207,11 +211,37 @@ void evolution(const bloom::Game &g) {
         unsigned a=i*2+g.tick/3;int r=20+int(g.transition%40);
         gfx_pixel(64+bloom::sine(a+8)*r/64,59+bloom::sine(a)*r/64,i%2?Pink:Cyan);
     }
+    if(g.gunNotice==bloom::FocusUnlocked) {
+        panel(30,75);center(36,"NEW WEAPON / SURGE",Dim);
+        int elapsed=180-g.gunNoticeTime;
+        int slide=elapsed<18?(18-elapsed)*7:0;
+        int bounce=bloom::sine(g.tick/3)/32;
+        gfx_textScaled((128-gfx_textWidthScaled("FOCUS FIRE",2))/2-slide,48+bounce,"FOCUS FIRE",Cyan,2);
+        big(69,"WITH SELECT!",White,1);
+        center(85,"TOGGLE WIDE / NARROW",Gold);
+        center(96,"FULL SPEED IN BOTH MODES",Dim);
+        center(113,"B: BOMB   A: FIRE",Cyan);
+        return;
+    }
     panel(34,64);center(41,"EVOLUTION",Dim);
     big(53,bloom::phaseName(g.phase),g.phase>=3?Pink:Cyan,1);
     center(72,bloom::unlock(g.phase),White);
-    center(84,g.phase==1?"UP / DOWN NOW ONLINE":g.phase==2?"DODGE CLOSE. EARN BOMBS.":g.phase==3?"HOLD B TO FIND THE GAP":"SURVIVE. REPEAT. BLOOM.",Gold);
+    center(84,g.phase==1?"UP / DOWN NOW ONLINE":g.phase==2?"DODGE CLOSE. EARN BOMBS.":g.phase==3?"SELECT: WIDE / NARROW":"SURVIVE. REPEAT. BLOOM.",Gold);
     center(111,"WEAPON +1   BOMB +1",Dim);
+}
+void gunNotice(const bloom::Game &g) {
+    if(g.gunNotice!=bloom::SwitchedGun || !g.gunNoticeTime)return;
+    int elapsed=72-g.gunNoticeTime;
+    int slide=elapsed<10?(10-elapsed)*13:g.gunNoticeTime<10?-(10-g.gunNoticeTime)*13:0;
+    int bounce=bloom::sine(elapsed/2)/40;
+    const char *lines[]={"SWITCHED","GUN!"};
+    for(unsigned i=0;i<2;++i) {
+        int x=(128-gfx_textWidthScaled(lines[i],2))/2-slide,y=14+i*16+bounce;
+        gfx_textScaled(x+1,y+1,lines[i],Black,2);
+        gfx_textScaled(x,y,lines[i],i?White:Cyan,2);
+    }
+    center(46,g.focus?"NARROW FIRE":"WIDE FIRE",Gold);
+
 }
 }
 void draw(const bloom::Game &g) {
@@ -222,6 +252,7 @@ void draw(const bloom::Game &g) {
     if(g.screen==bloom::Help) {help();return;}
     field(g);hud(g);
     if(g.screen==bloom::Evolution)evolution(g);
+    else if(g.screen==bloom::Play)gunNotice(g);
     else if(g.screen==bloom::Paused) {
         panel(34,61);big(42,"PAUSED",White,1);
         center(58,"START / A RESUME",Cyan);center(70,"B END RUN",Dim);

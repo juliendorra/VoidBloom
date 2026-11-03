@@ -1,0 +1,807 @@
+{
+  "cases": [
+    {
+      "wave": 1,
+      "focus": false,
+      "direction": "LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": false,
+      "direction": "RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": false,
+      "direction": "UP",
+      "center": [
+        64,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": false,
+      "direction": "DOWN",
+      "center": [
+        64,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": false,
+      "direction": "UP+LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": false,
+      "direction": "UP+RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": false,
+      "direction": "DOWN+LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": false,
+      "direction": "DOWN+RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": true,
+      "direction": "LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": true,
+      "direction": "RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": true,
+      "direction": "UP",
+      "center": [
+        64,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": true,
+      "direction": "DOWN",
+      "center": [
+        64,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": true,
+      "direction": "UP+LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": true,
+      "direction": "UP+RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": true,
+      "direction": "DOWN+LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 1,
+      "focus": true,
+      "direction": "DOWN+RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": false,
+      "direction": "LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": false,
+      "direction": "RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": false,
+      "direction": "UP",
+      "center": [
+        64,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": false,
+      "direction": "DOWN",
+      "center": [
+        64,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": false,
+      "direction": "UP+LEFT",
+      "center": [
+        7,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": false,
+      "direction": "UP+RIGHT",
+      "center": [
+        120,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": false,
+      "direction": "DOWN+LEFT",
+      "center": [
+        7,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": false,
+      "direction": "DOWN+RIGHT",
+      "center": [
+        120,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": true,
+      "direction": "LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": true,
+      "direction": "RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": true,
+      "direction": "UP",
+      "center": [
+        64,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": true,
+      "direction": "DOWN",
+      "center": [
+        64,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": true,
+      "direction": "UP+LEFT",
+      "center": [
+        7,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": true,
+      "direction": "UP+RIGHT",
+      "center": [
+        120,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": true,
+      "direction": "DOWN+LEFT",
+      "center": [
+        7,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 3,
+      "focus": true,
+      "direction": "DOWN+RIGHT",
+      "center": [
+        120,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": false,
+      "direction": "LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": false,
+      "direction": "RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": false,
+      "direction": "UP",
+      "center": [
+        64,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": false,
+      "direction": "DOWN",
+      "center": [
+        64,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": false,
+      "direction": "UP+LEFT",
+      "center": [
+        7,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": false,
+      "direction": "UP+RIGHT",
+      "center": [
+        120,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": false,
+      "direction": "DOWN+LEFT",
+      "center": [
+        7,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": false,
+      "direction": "DOWN+RIGHT",
+      "center": [
+        120,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": true,
+      "direction": "LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": true,
+      "direction": "RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": true,
+      "direction": "UP",
+      "center": [
+        64,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": true,
+      "direction": "DOWN",
+      "center": [
+        64,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": true,
+      "direction": "UP+LEFT",
+      "center": [
+        7,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": true,
+      "direction": "UP+RIGHT",
+      "center": [
+        120,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": true,
+      "direction": "DOWN+LEFT",
+      "center": [
+        7,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 5,
+      "focus": true,
+      "direction": "DOWN+RIGHT",
+      "center": [
+        120,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": false,
+      "direction": "LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": false,
+      "direction": "RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": false,
+      "direction": "UP",
+      "center": [
+        64,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": false,
+      "direction": "DOWN",
+      "center": [
+        64,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": false,
+      "direction": "UP+LEFT",
+      "center": [
+        7,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": false,
+      "direction": "UP+RIGHT",
+      "center": [
+        120,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": false,
+      "direction": "DOWN+LEFT",
+      "center": [
+        7,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": false,
+      "direction": "DOWN+RIGHT",
+      "center": [
+        120,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": true,
+      "direction": "LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": true,
+      "direction": "RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": true,
+      "direction": "UP",
+      "center": [
+        64,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": true,
+      "direction": "DOWN",
+      "center": [
+        64,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": true,
+      "direction": "UP+LEFT",
+      "center": [
+        7,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": true,
+      "direction": "UP+RIGHT",
+      "center": [
+        120,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": true,
+      "direction": "DOWN+LEFT",
+      "center": [
+        7,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 7,
+      "focus": true,
+      "direction": "DOWN+RIGHT",
+      "center": [
+        120,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": false,
+      "direction": "LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": false,
+      "direction": "RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": false,
+      "direction": "UP",
+      "center": [
+        64,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": false,
+      "direction": "DOWN",
+      "center": [
+        64,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": false,
+      "direction": "UP+LEFT",
+      "center": [
+        7,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": false,
+      "direction": "UP+RIGHT",
+      "center": [
+        120,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": false,
+      "direction": "DOWN+LEFT",
+      "center": [
+        7,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": false,
+      "direction": "DOWN+RIGHT",
+      "center": [
+        120,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": true,
+      "direction": "LEFT",
+      "center": [
+        7,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": true,
+      "direction": "RIGHT",
+      "center": [
+        120,
+        111
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": true,
+      "direction": "UP",
+      "center": [
+        64,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": true,
+      "direction": "DOWN",
+      "center": [
+        64,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": true,
+      "direction": "UP+LEFT",
+      "center": [
+        7,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": true,
+      "direction": "UP+RIGHT",
+      "center": [
+        120,
+        58
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": true,
+      "direction": "DOWN+LEFT",
+      "center": [
+        7,
+        112
+      ],
+      "full_ship_visible": true
+    },
+    {
+      "wave": 9,
+      "focus": true,
+      "direction": "DOWN+RIGHT",
+      "center": [
+        120,
+        112
+      ],
+      "full_ship_visible": true
+    }
+  ],
+  "passed": 80,
+  "torn_frames": 0,
+  "method": "hold normal/focus D-pad inputs for 240 frames, then compare the full actual ship against an unclipped renderer reference, including maximum exhaust and focus markers"
+}

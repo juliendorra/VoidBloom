@@ -15,7 +15,7 @@ unsigned rnd(unsigned n) {randomState^=randomState<<13;randomState^=randomState>
 int absval(int v) {return v<0?-v:v;}
 float bounded(float v,float a,float b) {return v<a?a:v>b?b:v;}
 struct Decision {unsigned keys=Fire;float danger=0;};
-Decision choose(Game &s,unsigned id,unsigned delay,int ownX,int ownY,bool allowFocus=true,int patrolY=0) {
+Decision choose(Game &s,unsigned id,unsigned delay,int ownX,int ownY,bool allowSwitch=true,int patrolY=0) {
     // Extrapolate the delayed visible trajectories by the known observation
     // lag. The pilot knows its own movement, like a person holding a D-pad.
     s.px=ownX;s.py=ownY;
@@ -35,8 +35,8 @@ Decision choose(Game &s,unsigned id,unsigned delay,int ownX,int ownY,bool allowF
     // A player can anticipate visible linear trajectories, but not future
     // enemy decisions. Candidate directions are ordinary D-pad inputs.
     for(int dy=s.phase?-1:0;dy<=int(s.phase!=0);++dy)for(int dx=-1;dx<=1;++dx)
-    for(unsigned focus=0;focus<(allowFocus?2u:1u);++focus) {
-        float speed=(focus?40.f:100.f)/Q;if(dx && dy)speed*=.707f;
+    {
+        float speed=100.f/Q;if(dx && dy)speed*=.707f;
         float cost=0,danger=0;
         const float x0=float(s.px)/Q,y0=float(s.py)/Q;
         for(unsigned t=0;t<=40;t+=4) {
@@ -61,14 +61,18 @@ Decision choose(Game &s,unsigned id,unsigned delay,int ownX,int ownY,bool allowF
         int targetY=patrolY?patrolY:109+(id%3)*3;
         cost=danger*4+absval(int(endX-target))*.24f+fabsf(endY-targetY)*.25f;
         if(endY<90)cost+=(90-endY)*3;
-        cost+=focus?.16f:0;cost+=dx==0&&dy==0?0:.08f;
+        cost+=dx==0&&dy==0?0:.08f;
         // Avoid prolonged edge camping, where half of the escape directions vanish.
         if(endX<12 || endX>116)cost+=1.5f;
         if(cost<best) {
-            best=cost;result.danger=danger;result.keys=Fire|(focus?Focus:0)|
+            best=cost;result.danger=danger;result.keys=Fire|
                 (dx<0?Left:dx>0?Right:0)|(dy<0?Up:dy>0?Down:0);
         }
     }
+    // The pilot can toggle the weapon it has selected, without changing
+    // movement speed. Use its own input history to release between presses.
+    if(allowSwitch && s.phase>=2 && !g.transition && g.screen==Play &&
+       bool(g.focus)!=(s.wave%4==0 || s.wave==6) && !(g.previous&Focus))result.keys|=Focus;
     bool panic=false;
     for(const auto &b:s.bullets)if(b.kind) {
         float ax=float(b.x-s.px)/Q,ay=float(b.y-s.py)/Q;

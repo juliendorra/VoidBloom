@@ -7,10 +7,10 @@
       "seed": 13283328,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 189.92,
+      "seconds": 177.63,
       "deaths": 0,
       "bombs": 11,
-      "score": 54050,
+      "score": 46110,
       "completed": true
     },
     {
@@ -18,10 +18,10 @@
       "seed": 13291247,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 196.07,
-      "deaths": 1,
-      "bombs": 8,
-      "score": 48615,
+      "seconds": 182.68,
+      "deaths": 3,
+      "bombs": 11,
+      "score": 47445,
       "completed": true
     },
     {
@@ -29,10 +29,10 @@
       "seed": 13299166,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 193.32,
+      "seconds": 179.07,
       "deaths": 3,
-      "bombs": 10,
-      "score": 43490,
+      "bombs": 11,
+      "score": 49570,
       "completed": true
     },
     {
@@ -40,10 +40,10 @@
       "seed": 13307085,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 189.08,
+      "seconds": 179.82,
       "deaths": 0,
-      "bombs": 10,
-      "score": 44620,
+      "bombs": 11,
+      "score": 51375,
       "completed": true
     },
     {
@@ -51,10 +51,10 @@
       "seed": 13315004,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 192.1,
+      "seconds": 178.82,
       "deaths": 0,
-      "bombs": 10,
-      "score": 61895,
+      "bombs": 8,
+      "score": 51905,
       "completed": true
     },
     {
@@ -62,10 +62,10 @@
       "seed": 13322923,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 193.42,
-      "deaths": 0,
-      "bombs": 11,
-      "score": 66110,
+      "seconds": 184.02,
+      "deaths": 1,
+      "bombs": 9,
+      "score": 58365,
       "completed": true
     },
     {
@@ -73,10 +73,10 @@
       "seed": 13330842,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 177.75,
-      "deaths": 0,
-      "bombs": 8,
-      "score": 42370,
+      "seconds": 188.13,
+      "deaths": 1,
+      "bombs": 10,
+      "score": 39105,
       "completed": true
     },
     {
@@ -84,10 +84,10 @@
       "seed": 13338761,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 194.42,
-      "deaths": 0,
+      "seconds": 173.02,
+      "deaths": 1,
       "bombs": 8,
-      "score": 39835,
+      "score": 52425,
       "completed": true
     },
     {
@@ -95,10 +95,10 @@
       "seed": 13346680,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 203.97,
-      "deaths": 0,
+      "seconds": 186.83,
+      "deaths": 2,
       "bombs": 10,
-      "score": 47450,
+      "score": 59790,
       "completed": true
     },
     {
@@ -106,10 +106,10 @@
       "seed": 13354599,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 187.07,
+      "seconds": 182.1,
       "deaths": 1,
-      "bombs": 10,
-      "score": 44830,
+      "bombs": 9,
+      "score": 44805,
       "completed": true
     },
     {
@@ -117,10 +117,10 @@
       "seed": 13362518,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 173.65,
+      "seconds": 193.43,
       "deaths": 2,
       "bombs": 10,
-      "score": 48660,
+      "score": 48105,
       "completed": true
     },
     {
@@ -128,10 +128,10 @@
       "seed": 13370437,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 193.6,
+      "seconds": 177.0,
       "deaths": 1,
-      "bombs": 10,
-      "score": 44565,
+      "bombs": 9,
+      "score": 46825,
       "completed": true
     },
     {
@@ -139,10 +139,10 @@
       "seed": 13378356,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 192.95,
-      "deaths": 0,
-      "bombs": 10,
-      "score": 60330,
+      "seconds": 176.42,
+      "deaths": 1,
+      "bombs": 8,
+      "score": 43105,
       "completed": true
     },
     {
@@ -150,10 +150,10 @@
       "seed": 13386275,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 199.9,
-      "deaths": 1,
-      "bombs": 9,
-      "score": 39360,
+      "seconds": 186.13,
+      "deaths": 3,
+      "bombs": 11,
+      "score": 38965,
       "completed": true
     },
     {
@@ -161,10 +161,10 @@
       "seed": 13394194,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 175.67,
-      "deaths": 1,
+      "seconds": 181.65,
+      "deaths": 3,
       "bombs": 9,
-      "score": 44510,
+      "score": 39250,
       "completed": true
     },
     {
@@ -172,10 +172,10 @@
       "seed": 13402113,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 185.12,
-      "deaths": 0,
+      "seconds": 180.05,
+      "deaths": 3,
       "bombs": 10,
-      "score": 38970,
+      "score": 47725,
       "completed": true
     },
     {
@@ -183,10 +183,10 @@
       "seed": 13410032,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 186.4,
+      "seconds": 188.72,
       "deaths": 2,
-      "bombs": 9,
-      "score": 41625,
+      "bombs": 10,
+      "score": 61770,
       "completed": true
     },
     {
@@ -194,10 +194,10 @@
       "seed": 13417951,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 182.08,
-      "deaths": 1,
-      "bombs": 9,
-      "score": 52950,
+      "seconds": 203.28,
+      "deaths": 3,
+      "bombs": 11,
+      "score": 48855,
       "completed": true
     },
     {
@@ -205,10 +205,10 @@
       "seed": 13425870,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 197.63,
-      "deaths": 0,
-      "bombs": 12,
-      "score": 54285,
+      "seconds": 186.72,
+      "deaths": 1,
+      "bombs": 11,
+      "score": 53565,
       "completed": true
     },
     {
@@ -216,10 +216,10 @@
       "seed": 13433789,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 195.47,
-      "deaths": 1,
-      "bombs": 7,
-      "score": 39705,
+      "seconds": 178.37,
+      "deaths": 0,
+      "bombs": 9,
+      "score": 40625,
       "completed": true
     },
     {
@@ -227,10 +227,10 @@
       "seed": 13441708,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 183.78,
+      "seconds": 182.9,
       "deaths": 1,
-      "bombs": 10,
-      "score": 43340,
+      "bombs": 11,
+      "score": 40435,
       "completed": true
     },
     {
@@ -238,10 +238,10 @@
       "seed": 13449627,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 190.77,
+      "seconds": 184.23,
       "deaths": 1,
-      "bombs": 7,
-      "score": 39225,
+      "bombs": 10,
+      "score": 55725,
       "completed": true
     },
     {
@@ -249,10 +249,10 @@
       "seed": 13457546,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 191.77,
-      "deaths": 0,
-      "bombs": 9,
-      "score": 41995,
+      "seconds": 196.3,
+      "deaths": 1,
+      "bombs": 10,
+      "score": 45530,
       "completed": true
     },
     {
@@ -260,10 +260,10 @@
       "seed": 13465465,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 197.72,
-      "deaths": 2,
-      "bombs": 11,
-      "score": 46005,
+      "seconds": 191.8,
+      "deaths": 3,
+      "bombs": 10,
+      "score": 47325,
       "completed": true
     },
     {
@@ -271,10 +271,10 @@
       "seed": 13473384,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 190.98,
-      "deaths": 0,
+      "seconds": 189.75,
+      "deaths": 2,
       "bombs": 10,
-      "score": 41035,
+      "score": 44960,
       "completed": true
     },
     {
@@ -282,10 +282,10 @@
       "seed": 13481303,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 192.43,
+      "seconds": 193.0,
       "deaths": 1,
       "bombs": 10,
-      "score": 56385,
+      "score": 43715,
       "completed": true
     },
     {
@@ -293,10 +293,10 @@
       "seed": 13489222,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 192.97,
+      "seconds": 183.3,
       "deaths": 1,
-      "bombs": 8,
-      "score": 40995,
+      "bombs": 9,
+      "score": 45290,
       "completed": true
     },
     {
@@ -304,10 +304,10 @@
       "seed": 13497141,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 197.83,
+      "seconds": 180.9,
       "deaths": 1,
-      "bombs": 9,
-      "score": 38830,
+      "bombs": 11,
+      "score": 40925,
       "completed": true
     },
     {
@@ -315,10 +315,10 @@
       "seed": 13505060,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 195.32,
-      "deaths": 0,
-      "bombs": 7,
-      "score": 58615,
+      "seconds": 186.4,
+      "deaths": 1,
+      "bombs": 10,
+      "score": 52810,
       "completed": true
     },
     {
@@ -326,10 +326,10 @@
       "seed": 13512979,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 194.28,
-      "deaths": 1,
-      "bombs": 12,
-      "score": 47140,
+      "seconds": 193.95,
+      "deaths": 2,
+      "bombs": 10,
+      "score": 44705,
       "completed": true
     },
     {
@@ -337,10 +337,10 @@
       "seed": 13520898,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 203.1,
-      "deaths": 1,
-      "bombs": 8,
-      "score": 34035,
+      "seconds": 175.68,
+      "deaths": 0,
+      "bombs": 11,
+      "score": 63000,
       "completed": true
     },
     {
@@ -348,10 +348,10 @@
       "seed": 13528817,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 186.62,
-      "deaths": 2,
-      "bombs": 9,
-      "score": 47480,
+      "seconds": 173.98,
+      "deaths": 0,
+      "bombs": 11,
+      "score": 54450,
       "completed": true
     },
     {
@@ -359,10 +359,10 @@
       "seed": 13536736,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 202.78,
-      "deaths": 3,
-      "bombs": 8,
-      "score": 35465,
+      "seconds": 193.68,
+      "deaths": 1,
+      "bombs": 10,
+      "score": 50320,
       "completed": true
     },
     {
@@ -370,10 +370,10 @@
       "seed": 13544655,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 202.3,
+      "seconds": 188.87,
       "deaths": 0,
-      "bombs": 10,
-      "score": 49745,
+      "bombs": 11,
+      "score": 51040,
       "completed": true
     },
     {
@@ -381,10 +381,10 @@
       "seed": 13552574,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 201.6,
-      "deaths": 0,
-      "bombs": 11,
-      "score": 48780,
+      "seconds": 188.72,
+      "deaths": 1,
+      "bombs": 9,
+      "score": 58285,
       "completed": true
     },
     {
@@ -392,10 +392,10 @@
       "seed": 13560493,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 189.63,
-      "deaths": 0,
-      "bombs": 9,
-      "score": 39985,
+      "seconds": 190.92,
+      "deaths": 1,
+      "bombs": 8,
+      "score": 61550,
       "completed": true
     },
     {
@@ -403,10 +403,10 @@
       "seed": 13568412,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 188.25,
+      "seconds": 181.55,
       "deaths": 0,
-      "bombs": 11,
-      "score": 62005,
+      "bombs": 10,
+      "score": 51005,
       "completed": true
     },
     {
@@ -414,10 +414,10 @@
       "seed": 13576331,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 188.27,
-      "deaths": 1,
+      "seconds": 182.27,
+      "deaths": 0,
       "bombs": 10,
-      "score": 69585,
+      "score": 43330,
       "completed": true
     },
     {
@@ -425,10 +425,10 @@
       "seed": 13584250,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 186.22,
+      "seconds": 179.55,
       "deaths": 0,
-      "bombs": 11,
-      "score": 57505,
+      "bombs": 7,
+      "score": 40535,
       "completed": true
     },
     {
@@ -436,10 +436,10 @@
       "seed": 13592169,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 187.72,
-      "deaths": 0,
+      "seconds": 184.03,
+      "deaths": 2,
       "bombs": 10,
-      "score": 65870,
+      "score": 38550,
       "completed": true
     },
     {
@@ -447,10 +447,10 @@
       "seed": 13600088,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 189.42,
+      "seconds": 200.77,
       "deaths": 0,
-      "bombs": 8,
-      "score": 57005,
+      "bombs": 9,
+      "score": 59205,
       "completed": true
     },
     {
@@ -458,10 +458,10 @@
       "seed": 13608007,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 188.42,
-      "deaths": 2,
-      "bombs": 11,
-      "score": 43740,
+      "seconds": 181.73,
+      "deaths": 0,
+      "bombs": 10,
+      "score": 45745,
       "completed": true
     },
     {
@@ -469,10 +469,10 @@
       "seed": 13615926,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 183.88,
+      "seconds": 179.33,
       "deaths": 1,
-      "bombs": 10,
-      "score": 49935,
+      "bombs": 9,
+      "score": 47060,
       "completed": true
     },
     {
@@ -480,10 +480,10 @@
       "seed": 13623845,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 196.17,
+      "seconds": 181.9,
       "deaths": 1,
-      "bombs": 10,
-      "score": 50295,
+      "bombs": 9,
+      "score": 55690,
       "completed": true
     },
     {
@@ -491,10 +491,10 @@
       "seed": 13631764,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 193.17,
-      "deaths": 2,
-      "bombs": 11,
-      "score": 45425,
+      "seconds": 186.05,
+      "deaths": 0,
+      "bombs": 9,
+      "score": 42070,
       "completed": true
     },
     {
@@ -502,10 +502,10 @@
       "seed": 13639683,
       "reaction_ms": 100,
       "wave": 13,
-      "seconds": 180.03,
+      "seconds": 183.22,
       "deaths": 0,
       "bombs": 10,
-      "score": 49145,
+      "score": 47760,
       "completed": true
     },
     {
@@ -513,10 +513,10 @@
       "seed": 13647602,
       "reaction_ms": 150,
       "wave": 13,
-      "seconds": 202.25,
-      "deaths": 1,
-      "bombs": 9,
-      "score": 52625,
+      "seconds": 181.33,
+      "deaths": 0,
+      "bombs": 11,
+      "score": 48210,
       "completed": true
     },
     {
@@ -524,17 +524,17 @@
       "seed": 13655521,
       "reaction_ms": 200,
       "wave": 13,
-      "seconds": 181.33,
+      "seconds": 198.12,
       "deaths": 1,
-      "bombs": 9,
-      "score": 38100,
+      "bombs": 10,
+      "score": 48900,
       "completed": true
     }
   ],
   "completed": 48,
   "full_evolution": 48,
   "highest_wave": 13,
-  "total_deaths": 37,
+  "total_deaths": 53,
   "waves": [
     {
       "wave": 1,
@@ -544,10 +544,10 @@
       "deaths": 0,
       "body_impacts": 0,
       "bullet_impacts": 0,
-      "bombs": 6,
-      "mean_bullets": 1.27,
+      "bombs": 3,
+      "mean_bullets": 1.25,
       "peak_bullets": 2,
-      "play_seconds": 458.27
+      "play_seconds": 405.93
     },
     {
       "wave": 2,
@@ -558,9 +558,9 @@
       "body_impacts": 0,
       "bullet_impacts": 0,
       "bombs": 0,
-      "mean_bullets": 1.48,
+      "mean_bullets": 1.49,
       "peak_bullets": 4,
-      "play_seconds": 353.45
+      "play_seconds": 368.47
     },
     {
       "wave": 3,
@@ -570,10 +570,10 @@
       "deaths": 0,
       "body_impacts": 0,
       "bullet_impacts": 0,
-      "bombs": 16,
-      "mean_bullets": 1.91,
+      "bombs": 12,
+      "mean_bullets": 1.88,
       "peak_bullets": 6,
-      "play_seconds": 620.88
+      "play_seconds": 625.2
     },
     {
       "wave": 4,
@@ -583,23 +583,23 @@
       "deaths": 0,
       "body_impacts": 0,
       "bullet_impacts": 0,
-      "bombs": 6,
-      "mean_bullets": 4.04,
+      "bombs": 5,
+      "mean_bullets": 3.94,
       "peak_bullets": 12,
-      "play_seconds": 917.22
+      "play_seconds": 896.88
     },
     {
       "wave": 5,
       "phase": 2,
       "entries": 48,
       "clears": 48,
-      "deaths": 0,
-      "body_impacts": 0,
+      "deaths": 1,
+      "body_impacts": 1,
       "bullet_impacts": 0,
-      "bombs": 25,
-      "mean_bullets": 6.13,
+      "bombs": 27,
+      "mean_bullets": 6.22,
       "peak_bullets": 19,
-      "play_seconds": 571.08
+      "play_seconds": 562.38
     },
     {
       "wave": 6,
@@ -609,88 +609,88 @@
       "deaths": 1,
       "body_impacts": 1,
       "bullet_impacts": 0,
-      "bombs": 13,
-      "mean_bullets": 6.06,
-      "peak_bullets": 20,
-      "play_seconds": 588.72
+      "bombs": 12,
+      "mean_bullets": 6.47,
+      "peak_bullets": 19,
+      "play_seconds": 579.57
     },
     {
       "wave": 7,
       "phase": 3,
       "entries": 48,
       "clears": 48,
-      "deaths": 0,
-      "body_impacts": 0,
-      "bullet_impacts": 0,
-      "bombs": 82,
-      "mean_bullets": 8.93,
-      "peak_bullets": 39,
-      "play_seconds": 602.25
+      "deaths": 4,
+      "body_impacts": 2,
+      "bullet_impacts": 2,
+      "bombs": 76,
+      "mean_bullets": 9.46,
+      "peak_bullets": 40,
+      "play_seconds": 601.93
     },
     {
       "wave": 8,
       "phase": 3,
       "entries": 48,
       "clears": 48,
-      "deaths": 1,
+      "deaths": 2,
       "body_impacts": 0,
-      "bullet_impacts": 1,
-      "bombs": 125,
-      "mean_bullets": 25.24,
+      "bullet_impacts": 2,
+      "bombs": 136,
+      "mean_bullets": 24.52,
       "peak_bullets": 55,
-      "play_seconds": 731.5
+      "play_seconds": 657.95
     },
     {
       "wave": 9,
       "phase": 4,
       "entries": 48,
       "clears": 48,
-      "deaths": 2,
+      "deaths": 3,
       "body_impacts": 2,
-      "bullet_impacts": 0,
-      "bombs": 80,
-      "mean_bullets": 8.74,
-      "peak_bullets": 40,
-      "play_seconds": 663.47
+      "bullet_impacts": 1,
+      "bombs": 89,
+      "mean_bullets": 9.69,
+      "peak_bullets": 41,
+      "play_seconds": 663.72
     },
     {
       "wave": 10,
       "phase": 4,
       "entries": 48,
       "clears": 48,
-      "deaths": 8,
-      "body_impacts": 4,
-      "bullet_impacts": 4,
-      "bombs": 46,
-      "mean_bullets": 11.12,
-      "peak_bullets": 47,
-      "play_seconds": 683.85
+      "deaths": 9,
+      "body_impacts": 6,
+      "bullet_impacts": 3,
+      "bombs": 41,
+      "mean_bullets": 12.21,
+      "peak_bullets": 48,
+      "play_seconds": 669.58
     },
     {
       "wave": 11,
       "phase": 4,
       "entries": 48,
       "clears": 48,
-      "deaths": 10,
-      "body_impacts": 5,
-      "bullet_impacts": 5,
-      "bombs": 28,
-      "mean_bullets": 12.45,
-      "peak_bullets": 45,
-      "play_seconds": 689.65
+      "deaths": 17,
+      "body_impacts": 7,
+      "bullet_impacts": 10,
+      "bombs": 22,
+      "mean_bullets": 13.27,
+      "peak_bullets": 43,
+      "play_seconds": 694.23
     },
     {
       "wave": 12,
       "phase": 4,
       "entries": 48,
       "clears": 48,
-      "deaths": 15,
+      "deaths": 16,
       "body_impacts": 0,
-      "bullet_impacts": 15,
-      "bombs": 32,
-      "mean_bullets": 52.73,
-      "peak_bullets": 103,
-      "play_seconds": 1286.23
+      "bullet_impacts": 16,
+      "bombs": 48,
+      "mean_bullets": 50.98,
+      "peak_bullets": 104,
+      "play_seconds": 1104.27
     }
   ],
   "pressure": {

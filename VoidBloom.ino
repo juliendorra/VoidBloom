@@ -44,15 +44,15 @@ static bool debug(char command,const char *args) {
 #endif
     if(command!='H')return false;
     char line[220];
-    snprintf(line,sizeof line,"BLOOMSTATE %u %u %u %u %lu %lu %u %u %d %d %u %u %u %u %u %u %u %u\n",
+    snprintf(line,sizeof line,"BLOOMSTATE %u %u %u %u %lu %lu %u %u %d %d %u %u %u %u %u %u %u %u %u %u\n",
         game.screen,game.wave,game.phase,game.lives,(unsigned long)game.score,(unsigned long)game.tick,
         game.bombs,game.combo,game.px,game.py,game.liveBullets(),game.liveEnemies(),game.transition,
-        game.invincible,game.graze,game.focus,game.muted,game.remaining);
+        game.invincible,game.graze,game.focus,game.muted,game.remaining,game.gunNotice,game.gunNoticeTime);
     dbg::print(line);return true;
 }
 #endif
 void setup() {
-    chgame.boot();dbg::begin("BLOOM 1.1.2");
+    chgame.boot();dbg::begin("BLOOM 1.2.0");
 #if CHGAME_DEBUG
     dbg::hook=debug;
 #endif
@@ -69,6 +69,7 @@ static void sound() {
     else if(game.events&Burst)audio::sfx(BombSound);
     else if(game.events&Clear)audio::sfx(ClearSound);
     else if(game.events&Kill)audio::sfx(KillSound);
+    else if(game.events&GunSwitch)audio::blip(game.focus?1760:1320,90,true);
     else if(game.events&Shot)audio::sfx(FireSound);
     else if(game.events&Beat) {
         // Original ascending pulse motif gains subdivisions with evolution.
@@ -82,13 +83,13 @@ void loop() {
     dbg::poll();if(!chgame.nextFrame())return;
     chgame.pollButtons();uint8_t keys=0;
     if(chgame.pressed(A_BUTTON))keys|=bloom::Fire;
-    if(chgame.pressed(B_BUTTON))keys|=bloom::Focus;
+    if(chgame.pressed(B_BUTTON))keys|=bloom::Bomb;
     if(chgame.pressed(UP_BUTTON))keys|=bloom::Up;
     if(chgame.pressed(DOWN_BUTTON))keys|=bloom::Down;
     if(chgame.pressed(LEFT_BUTTON))keys|=bloom::Left;
     if(chgame.pressed(RIGHT_BUTTON))keys|=bloom::Right;
     if(chgame.pressed(START_BUTTON))keys|=bloom::Start;
-    if(chgame.pressed(SELECT_BUTTON))keys|=bloom::Bomb;
+    if(chgame.pressed(SELECT_BUTTON))keys|=bloom::Focus;
     const auto previous=game.screen;game.update(keys);sound();
     if((game.screen==bloom::Over && previous!=bloom::Over) ||
        (game.screen==bloom::Title && previous==bloom::Paused) || record.muted!=game.muted) {

@@ -32,7 +32,29 @@ int main() {
         assert(g.py==(wave==1?111:(keys&Up)?58:(keys&Down)?112:111)*Q);
     }
     ready(3);frames(10,Left);int fast=64*Q-g.px;
-    ready(3);frames(10,Left|Focus);assert(64*Q-g.px<fast);
+    ready(5);frames(10,Left|Focus);assert(64*Q-g.px==fast && g.focus);
+    // SELECT only switches an actual spread weapon, and never fires it.
+    static_assert(Bomb==2 && Focus==128,"B bombs; SELECT switches guns");
+    for(unsigned wave:{1u,2u,3u,4u}) {
+        ready(wave);g.update(Focus);assert(!g.focus && !g.gunNoticeTime);
+        for(const auto &shot:g.shots)assert(!shot.kind);
+    }
+    ready(5);empty();g.spawned=g.waveTotal;g.remaining=1;
+    g.update(Focus);assert(g.focus && g.gunNotice==SwitchedGun && (g.events&GunSwitch));
+    frames(12,Focus);assert(g.focus);for(const auto &shot:g.shots)assert(!shot.kind);
+    g.update(Fire);assert(g.focus);assert(g.shots[0].vx==-18 && g.shots[2].vx==18);
+    g.update(Focus);assert(!g.focus && g.gunNoticeTime==72);
+    for(auto &shot:g.shots)shot.kind=0;g.cooldown=0;g.update(Fire);
+    assert(g.shots[0].vx==-42 && g.shots[2].vx==42);
+    g.update(Focus);assert(g.focus);g.remaining=0;g.update(0);
+    assert(g.wave==6 && g.focus); // Selection persists across waves.
+    ready(4);empty();g.spawned=g.waveTotal;g.remaining=0;g.update(0);
+    assert(g.wave==5 && g.screen==Evolution && g.gunNotice==FocusUnlocked && g.gunNoticeTime==180);
+    frames(100);assert(g.screen==Evolution && g.gunNoticeTime==80);
+    frames(125);assert(g.screen==Play && !g.gunNoticeTime);
+    g.update(Focus);assert(g.focus);g.update(Start);unsigned notice=g.gunNoticeTime;
+    frames(20);assert(g.gunNoticeTime==notice && g.focus);
+    g.update(Start);assert(g.screen==Play && g.focus);
     // Wave 2 introduces one readable sortie before free flight. It must
     // leave smoothly, loop above the slot, lock its dive, and return home.
     ready(2);g.invincible=60000;y=g.py;frames(89,Up);assert(g.py==y);
@@ -68,7 +90,7 @@ int main() {
     }
     ready();g.invincible=0;g.update(Start);assert(g.screen==Paused);
     static Game snapshot;memcpy(&snapshot,&g,sizeof g);
-    frames(100,Up|Bomb|Left);assert(g.tick==snapshot.tick && g.age==snapshot.age && g.bombs==snapshot.bombs);
+    frames(100,Up|Left);assert(g.tick==snapshot.tick && g.age==snapshot.age && g.bombs==snapshot.bombs);
     assert(memcmp(g.bullets,snapshot.bullets,sizeof g.bullets)==0);
     g.update(0);g.update(Start);assert(g.screen==Play);
     ready(5);empty();g.invincible=0;g.emit(g.px+6*Q,g.py,0,0);

@@ -1,5 +1,5 @@
 {
-  "game_version": "1.1.2",
+  "game_version": "1.2.0",
   "source": "CHGame simulator; actual game rules and framebuffer",
   "capture": "staged wave starts; scripted opening controls and delayed-observation pilot replay; normal damage, no invulnerability",
   "timing": "60 Hz simulation, one GIF frame per 6 updates, 100 ms per GIF frame; real play speed",
@@ -10,8 +10,8 @@
       "file": "wave-01-origin.gif",
       "moment": "Marching formation and single-shot fire",
       "duration_ms": 6000,
-      "size_bytes": 194584,
-      "sha256": "f9199be04a9e76751949c477fc6ce308f5a87a5707b009752356e46296b5f970",
+      "size_bytes": 195719,
+      "sha256": "551a5af81668ef840348f2ec33a30cce1653ca02b7c763f1205e30bb4ec59ac0",
       "peak_hostile_bullets": 2,
       "lives_lost": 0
     },
@@ -20,8 +20,8 @@
       "file": "wave-02-awaken.gif",
       "moment": "Charge, upward loop, committed dive, and return",
       "duration_ms": 6000,
-      "size_bytes": 213700,
-      "sha256": "a137b2a894dcb071952c2d832978e096c5826eae85643ce086c641411e92aaa9",
+      "size_bytes": 216636,
+      "sha256": "5ed7c3b9a0d214f2189a36feafb022cbdfd797ec55eb0576def11fc166208283",
       "peak_hostile_bullets": 3,
       "lives_lost": 0
     },
@@ -30,8 +30,8 @@
       "file": "wave-03-vector.gif",
       "moment": "Free flight and twin shot against moving attackers",
       "duration_ms": 6000,
-      "size_bytes": 174705,
-      "sha256": "fe92145d284ff4077f1d7e5720d345ac4a77786fb65ca3df3ee97a05137d65df",
+      "size_bytes": 173388,
+      "sha256": "9a7530673094a6e2b37b5aeabc527a5d134627d3e36173676f9742dd2e4597d6",
       "peak_hostile_bullets": 4,
       "lives_lost": 0
     },
@@ -40,8 +40,8 @@
       "file": "wave-04-first-boss.gif",
       "moment": "Rings, aimed fans, rotating streams, and recovery beats",
       "duration_ms": 10000,
-      "size_bytes": 326450,
-      "sha256": "e68ebfc75b8258c3698eaea6cd0b5c5011a8bdfa47544c00c2f461ad5e974962",
+      "size_bytes": 328441,
+      "sha256": "c475d1e8b2091cd1f99f39233a5f92339a07666217996161a2d1404e4d3a861d",
       "peak_hostile_bullets": 12,
       "lives_lost": 0
     },
@@ -50,9 +50,9 @@
       "file": "wave-05-surge.gif",
       "moment": "Three-way spread and the first radial volleys",
       "duration_ms": 6000,
-      "size_bytes": 291956,
-      "sha256": "f14ce3e05b6c52464c463905a6be0aef958bea684119cb33631612d382bb6ecd",
-      "peak_hostile_bullets": 12,
+      "size_bytes": 289557,
+      "sha256": "1a5c06cacd307548236f4e5632922a26f6c8003476f8575d42c9237315667cf0",
+      "peak_hostile_bullets": 15,
       "lives_lost": 0
     },
     {
@@ -60,8 +60,8 @@
       "file": "wave-06-focused-spread.gif",
       "moment": "Spread fire and dodging between turret volleys",
       "duration_ms": 6000,
-      "size_bytes": 317484,
-      "sha256": "b847451cad5b989534d261823e2da86be2b7c58b7f80f18889d460533eb1ff38",
+      "size_bytes": 334673,
+      "sha256": "72854e4392461cf1ce4ac9e77d425e2c8c51fe8f5255f7a9bf01700ac69cb211",
       "peak_hostile_bullets": 17,
       "lives_lost": 0
     },
@@ -70,8 +70,8 @@
       "file": "wave-07-nova.gif",
       "moment": "Five-way fire through weaving attackers",
       "duration_ms": 6000,
-      "size_bytes": 307928,
-      "sha256": "c86b4fa8699283027d9592c1046695918f0e31d2d9c7f8103e9a9a5e96695481",
+      "size_bytes": 305178,
+      "sha256": "1c907f3c7b037d5c1e11d468f1d4902b4ad8df584b79df5ad23167aa68eb88eb",
       "peak_hostile_bullets": 28,
       "lives_lost": 0
     },
@@ -80,8 +80,8 @@
       "file": "wave-08-nova-boss.gif",
       "moment": "Denser boss rings, fans, and rotating streams",
       "duration_ms": 10000,
-      "size_bytes": 562395,
-      "sha256": "8e25d57c7ee278de768d11b89e0198619f121a8f9a4c191683a6c7fe4d384758",
+      "size_bytes": 578650,
+      "sha256": "c2c299cf5aecaaded5251cd9179b579643627ee11ad6571f094d1b7e3a98f04d",
       "peak_hostile_bullets": 55,
       "lives_lost": 0
     },
@@ -90,8 +90,8 @@
       "file": "wave-09-infinity.gif",
       "moment": "Full-power fire and stronger moving enemies",
       "duration_ms": 6000,
-      "size_bytes": 316565,
-      "sha256": "c757e601f4d8c6237990c78036e1654aa8d84d50b1780547f17b4a90c1b4040f",
+      "size_bytes": 325750,
+      "sha256": "f436e2748072639acc28d2f574500730bb0d7cd9769146660fd1466490515790",
       "peak_hostile_bullets": 29,
       "lives_lost": 0
     },
@@ -100,9 +100,9 @@
       "file": "wave-10-panic-bomb.gif",
       "moment": "A bomb clears a barrage before the attack resumes",
       "duration_ms": 6000,
-      "size_bytes": 317120,
-      "sha256": "fb96bd062834ac2cc6b13928e7951cb5a8d18d249e92fc2b6ba60da4423a73b3",
-      "peak_hostile_bullets": 28,
+      "size_bytes": 328339,
+      "sha256": "6e3ee55c62af3fa9a99c3b37ebddb860f5fdcf8bd2ddadf00b5226dd34e68ccd",
+      "peak_hostile_bullets": 36,
       "lives_lost": 0
     },
     {
@@ -110,9 +110,9 @@
       "file": "wave-11-endless-pressure.gif",
       "moment": "Full-power fire under sustained pressure",
       "duration_ms": 6000,
-      "size_bytes": 312559,
-      "sha256": "ebe97295d43393949a2133345c61bdb749f1ca8f8ebcaa46da6fb770e0728b47",
-      "peak_hostile_bullets": 26,
+      "size_bytes": 336559,
+      "sha256": "fc6ccc728778e9df45641e7b6fa58b93f002b4b04996bd2e0c463cad4053fd2c",
+      "peak_hostile_bullets": 42,
       "lives_lost": 0
     },
     {
@@ -120,8 +120,8 @@
       "file": "wave-12-infinity-boss.gif",
       "moment": "The first full-progression boss and its largest patterns",
       "duration_ms": 10000,
-      "size_bytes": 602376,
-      "sha256": "953e48113c3cd1c7e4dae901dbeb4f58b2decae8f10262928af32785a334c03f",
+      "size_bytes": 628737,
+      "sha256": "7c1efab0c415b373f37fe7558dcb5f5c0ebf93202ccd4a02e494707c6be88800",
       "peak_hostile_bullets": 102,
       "lives_lost": 0
     }

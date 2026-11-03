@@ -53,7 +53,7 @@ def main():
             d.buttons(mask_of('A'))
             d.frames(144)
             d.buttons(0)
-        bombs = state(d)[6]; tap(d, 'SELECT'); assert state(d)[6] == bombs - 1
+        bombs = state(d)[6]; tap(d, 'B'); assert state(d)[6] == bombs - 1
         tap(d, 'START'); tap(d, 'B'); assert state(d)[0] == 0
         assert not transport.bugs, transport.bugs
     finally:

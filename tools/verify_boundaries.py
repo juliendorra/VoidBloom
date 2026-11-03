@@ -20,7 +20,7 @@ def state(driver):
 def render(driver, wave, x, y, focus, hidden=False):
     driver.buttons(0)
     driver.cmd(f'E {wave} {x} {y} 1 {int(hidden)}')
-    driver.buttons(mask_of('B') if focus else 0)
+    driver.buttons(mask_of('SELECT') if focus else 0)
     driver.frames(1)
     return to_image(driver.shot(), 1)
 
@@ -41,11 +41,11 @@ def main():
                           for y in range(77, 94) for x in range(55, 74)
                           if reference.getpixel((x, y)) != background.getpixel((x, y))}
                 assert pixels and max(dy for dx, dy in pixels) == 7, 'reference must include the longest exhaust'
-                if focus:
+                if focus and wave >= 5:
                     assert min(dx for dx, dy in pixels) == -7 and max(dx for dx, dy in pixels) == 7
                 for direction in ['LEFT', 'RIGHT', 'UP', 'DOWN', 'UP+LEFT', 'UP+RIGHT', 'DOWN+LEFT', 'DOWN+RIGHT']:
                     driver.buttons(0); driver.cmd(f'E {wave} 64 111')
-                    driver.buttons(mask_of(direction + ('+B' if focus else ''))); driver.frames(240)
+                    driver.buttons(mask_of(direction + ('+SELECT' if focus else ''))); driver.frames(240)
                     current = state(driver); x, y = current[8] // 64, current[9] // 64
                     actual = render(driver, wave, x, y, focus)
                     # Keep a useful failing image if a later sprite change

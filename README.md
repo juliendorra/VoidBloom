@@ -2,9 +2,9 @@
 
 An endless arcade shooter that starts with monochrome marching invaders and transforms into a neon bullet storm. Evolve your ship, thread the gaps, and bring down the Bloom Cores.
 
-![Void Bloom gameplay](docs/gameplay.gif?preview=b48da4b105cb)
+![Void Bloom gameplay](docs/gameplay.gif?preview=fdca42d66e2b)
 
-Normal-speed excerpts from one simulator campaign, showing movement, focused fire, and weapon upgrades.
+Normal-speed excerpts from one simulator campaign, showing movement, gun switching, and weapon upgrades.
 
 ## Controls
 
@@ -12,9 +12,11 @@ Normal-speed excerpts from one simulator campaign, showing movement, focused fir
 |---|---|
 | D-pad | Move; up/down unlock on wave 3 |
 | A | Hold to fire; confirm; retry |
-| B | Hold for slow movement and focused fire; title: controls; pause: end run |
-| SELECT | Bomb; title/pause: toggle sound |
+| B | Press for a panic bomb; title: controls; pause: end run |
+| SELECT | Toggle wide/narrow fire from wave 5; title/pause: toggle sound |
 | START | Pause/resume |
+
+Wave 5 introduces spread fire with an animated **“Focus fire with Select!”** prompt. SELECT then switches between wide coverage and a tighter stream for concentrating shots on a target. Movement stays at full speed. **“Switched gun!”** confirms each change, and the circle around the ship stays visible in narrow mode. The selector is inactive during waves 1–4. Bombs appear as small rings with center dots beside **B** in the bottom HUD.
 
 The existing web emulator uses **arrows / WASD**, **X / Space** for A, **Z** for B, **Right Shift / Backspace** for SELECT, and **Enter** for START. The playable preview also supplies touch controls.
 
@@ -29,7 +31,7 @@ The existing web emulator uses **arrows / WASD**, **X / Space** for A, **Z** for
 | 7–8 | Nova | Five-way fire, denser fans and spirals |
 | 9 onward | Infinity | Double shot damage, tougher enemies, the largest barrages |
 
-A boss appears every fourth wave, cycling radial rings, aimed fans, and rotating streams. Regular waves after bosses provide a recovery interval. Early fighters peel away before reaching the pilot; later ones commit farther down-screen. The small center of your ship is the collision core. Hold B to move slowly and tighten the spread.
+A boss appears every fourth wave, cycling radial rings, aimed fans, and rotating streams. Regular waves after bosses provide a recovery interval. Early fighters peel away before reaching the pilot; later ones commit farther down-screen. The small center of your ship is the collision core. From wave 5, press SELECT to tighten the spread around one target or switch back to wide coverage. Press B to clear danger with a bomb.
 
 The first boss fires short bursts with a one-second breathing interval. Wave 4 allows at most 12 hostile bullets at once; later waves gradually allow denser patterns. Stay mobile while the aimed fans commit, then use the gap to reposition.
 

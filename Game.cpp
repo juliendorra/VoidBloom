@@ -46,7 +46,7 @@ void Game::begin(uint32_t seed) {
     clear(bullets,BULLETS);clear(shots,SHOTS);
     screen=Play;tick=score=age=transition=events=comboClock=graze=0;
     extraAt=20000;rng=seed?seed:1;wave=1;phase=0;lives=3;bombs=3;combo=1;
-    chain=cooldown=bombFlash=shake=previous=beat=0;focus=false;
+    chain=cooldown=bombFlash=shake=previous=beat=gunNoticeTime=0;gunNotice=NoGunNotice;focus=false;
     px=64*Q;py=111*Q;invincible=90;startWave();
 }
 void Game::spawn(unsigned kind,int x,int y,unsigned seed) {
@@ -316,6 +316,7 @@ void Game::bulletsTick() {
 }
 void Game::effectsTick() {
     if(bombFlash)--bombFlash;if(shake)--shake;
+    if(gunNoticeTime && !--gunNoticeTime)gunNotice=NoGunNotice;
     for(auto &s:sparks)if(s.life) {--s.life;s.x+=s.vx;s.y+=s.vy;}
 }
 void Game::advanceWave() {
@@ -323,6 +324,7 @@ void Game::advanceWave() {
     if(wave<999)++wave;phase=phaseFor(wave);
     if(phase!=was) {
         screen=Evolution;transition=135;events|=Evolve;
+        if(phase==2) {gunNotice=FocusUnlocked;gunNoticeTime=180;transition=180;}
         if(bombs<5)++bombs;invincible=120;
     } else transition=70;
     startWave();
@@ -331,22 +333,22 @@ void Game::update(uint8_t keys) {
     events=0;const uint8_t pressed=keys&~previous;previous=keys;
     if(screen==Title) {
         ++tick;
-        if(pressed&Focus) {back=Title;screen=Help;}
+        if(pressed&Bomb) {back=Title;screen=Help;}
         else if(pressed&(Fire|Start))begin(rng^tick);
-        else if(pressed&Bomb)muted=!muted;
+        else if(pressed&Focus)muted=!muted;
         return;
     }
-    if(screen==Help) {if(pressed&(Fire|Focus|Start))screen=back;return;}
+    if(screen==Help) {if(pressed&(Fire|Bomb|Start))screen=back;return;}
     if(screen==Paused) {
         if(pressed&(Start|Fire))screen=Play;
-        else if(pressed&Focus) {screen=Title;transition=0;}
-        else if(pressed&Bomb)muted=!muted;
+        else if(pressed&Bomb) {screen=Title;transition=0;}
+        else if(pressed&Focus)muted=!muted;
         return;
     }
     if(screen==Over) {
         effectsTick();if(transition)--transition;
         else if(pressed&(Fire|Start))begin(rng^tick);
-        else if(pressed&Focus)screen=Title;
+        else if(pressed&Bomb)screen=Title;
         return;
     }
     if(screen==Evolution) {
@@ -357,14 +359,17 @@ void Game::update(uint8_t keys) {
     }
     if(pressed&Start) {screen=Paused;return;}
     ++tick;effectsTick();
+    if(phase>=2 && (pressed&Focus)) {
+        focus=!focus;gunNotice=SwitchedGun;gunNoticeTime=72;events|=GunSwitch;
+    }
     if(transition) {--transition;return;}
-    ++age;focus=(keys&Focus)!=0;if(invincible)--invincible;if(cooldown)--cooldown;
+    ++age;if(invincible)--invincible;if(cooldown)--cooldown;
     if(comboClock) {if(!--comboClock) {combo=1;chain=0;}}
     int dx=((keys&Right)!=0)-((keys&Left)!=0),dy=phase?((keys&Down)!=0)-((keys&Up)!=0):0;
-    int speed=focus?40:100;if(dx && dy)speed=speed*181/256;
+    int speed=100;if(dx && dy)speed=speed*181/256;
     px=clamp(px+dx*speed,PLAYER_MIN_X*Q,PLAYER_MAX_X*Q);
     py=clamp(py+dy*speed,PLAYER_MIN_Y*Q,PLAYER_MAX_Y*Q);
-    if(keys&(Fire|Focus))fire();
+    if(keys&Fire)fire();
     enemiesTick();
     if(screen!=Play || transition)return;
     shotsTick();
