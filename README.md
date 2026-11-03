@@ -22,7 +22,7 @@ Wave 5 introduces spread fire with standalone **“Focus fire with Select!”** 
 
 The existing web emulator uses **arrows / WASD**, **X / Space** for A, **Z** for B, **Right Shift / Backspace** for SELECT, and **Enter** for START. The playable preview also supplies touch controls.
 
-Optional rumble-pack support uses GPIO1 / PC0, the same nonblocking PWM driver as Pinball. Kills and gun switches give short taps; damage, boss defeats, evolutions and bonus lives give distinct stronger cues. Bombs send three fading rumble ripples across the full visible blast. Pause and menus stop the motor immediately. Rumble is independent of the sound setting.
+Optional rumble-pack support uses GPIO1 / PC0, the same nonblocking PWM driver as Pinball. Kills and gun switches give short taps; damage, boss defeats, evolutions and bonus lives give distinct stronger cues. Damage gives a short 80 ms knock. Bombs send two broad rumble waves across the half-second blast, separated by 167 ms fully off. Pause and menus stop the motor immediately. Rumble is independent of the sound setting.
 
 ## Rules
 

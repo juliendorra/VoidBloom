@@ -9,10 +9,11 @@
   "kill_throttle_ms": 90,
   "bomb_ripple_frames": 30,
   "bomb_ripple_peaks": [
-    235,
-    210,
-    185
+    255,
+    235
   ],
+  "bomb_off_gap_frames": 10,
+  "hit_pulse_ms": 80,
   "bomb_quiet_gaps": true,
   "bomb_frame_sync_and_pause_resume": true,
   "stalled_loop_expiry_ms": 35,

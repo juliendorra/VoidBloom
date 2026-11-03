@@ -100,3 +100,9 @@ The unchanged Pinball `src/rumble` driver provides 1 kHz PWM on GPIO1 / PC0 / H1
 SELECT now shows “Narrow fire!” or “Spread fire!” in the lower alert position. The redundant small mode caption is removed; the circle continues to identify narrow mode. The glyphs and shadow stay above the complete ship at the upper movement boundary.
 
 The connected Rev0 passed boot-off, immediate pause stop, all three ripple crests and their gaps, and 35 ms refresh expiry without advancing game frames. Samples were 235, 0, 210, 0, 185 and 0/255 across the 30-frame blast. The ordinary release was restored and accepted CRC `45F981D5`. These checks confirm the controller and timer on the device; subjective motor feel remains a human check. Debug status formatting now avoids variadic printf, whose output was garbled on the compact handheld C runtime. The native simulator and physical board use the same numeric state protocol.
+
+## Rumble contrast tuning (1.3.1)
+
+The user reported that hit and bomb feedback still felt alike on the motor. The first pattern's 67 ms gaps were verified in the controller but did not establish perceptual separation. This revision shortens damage to one full-strength 80 ms knock. The bomb uses two broader waves with a 167 ms fully-off interval, then a fading second wave, still tied to the 30-frame blast. The wider gap is intended to let the ERM coast down; actual perceived distinction requires feedback on the pack.
+
+The 1.3.1 console timing check confirmed both crests, the longer gap, pause stop and stalled-loop expiry. The game build was restored and accepted CRC `E0276BE5`. Perceived separation on the pack remains pending user feedback.

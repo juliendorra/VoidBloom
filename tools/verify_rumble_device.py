@@ -24,13 +24,13 @@ def main():
         def blast():
             driver.buttons(mask_of('B'));driver.frames(1)
             sample=state();driver.buttons(0)
-            assert sample[20]==235 and 0<sample[21]<=35,sample
+            assert sample[20]==255 and 0<sample[21]<=35,sample
             return sample
         bomb=blast()
         press('START');paused=state();assert paused[0]==3 and paused[20:22]==[0,0],paused
         driver.frames(1);press('START');driver.frames(76)
         active=blast();ripples=[{'flash':30,'strength':active[20]}]
-        for frames,flash,strength in [(6,24,0),(4,20,210),(6,14,0),(4,10,185),(10,0,0)]:
+        for frames,flash,strength in [(7,23,0),(9,14,0),(1,13,235),(3,10,190),(10,0,0)]:
             driver.frames(frames);sample=state()
             assert sample[20]==strength,(flash,strength,sample)
             ripples.append({'flash':flash,'strength':sample[20]})
@@ -52,5 +52,5 @@ def main():
             report['release_restored']=True;report['release_crc32']=f"{restored['crc32']:08X}"
             out=ROOT/'out/rumble';out.mkdir(parents=True,exist_ok=True)
             (out/'device-validation.json').write_text(json.dumps(report,indent=2)+'\n')
-    print('PASS: physical rumble boot-off, three visual-synced bomb ripples, pause stop, IRQ expiry without game frames; release restored')
+    print('PASS: physical rumble boot-off, two visual-synced bomb ripples, pause stop, IRQ expiry without game frames; release restored')
 if __name__=='__main__':main()

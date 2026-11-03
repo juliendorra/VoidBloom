@@ -20,14 +20,14 @@ void update(const bloom::Game &game) {
         rumble::pulse(0,0,3);bombActive=false;
     }
     const unsigned events=game.events;
-    if(events&Hurt) {rumble::pulse(255,180,4);return;}
+    if(events&Hurt) {rumble::pulse(255,80,4);return;}
     if(game.bombFlash) {
-        // Three outward ripples, with quieter gaps and a fading final tail.
+        // Two broad ripples with a full 167 ms coast-down gap.
         // The visual counter is the clock: pause and evolution stay in sync.
         static const uint8_t envelope[30]={
-            235,235,210,170,115,60,0,0,0,0,
-            210,210,190,150,100,50,0,0,0,0,
-            185,185,170,150,125,95,70,45,25,10
+            255,255,235,210,175,130,80,
+            0,0,0,0,0,0,0,0,0,0,
+            235,235,215,190,160,130,100,80,65,50,35,20,10
         };
         unsigned frame=game.bombFlash>=BOMB_FRAMES?0:(BOMB_FRAMES-game.bombFlash)*30/BOMB_FRAMES;
         bombActive=true;
