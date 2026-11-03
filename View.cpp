@@ -259,13 +259,12 @@ void gunNotice(const bloom::Game &g) {
     int elapsed=72-g.gunNoticeTime;
     int slide=elapsed<10?(10-elapsed)*13:g.gunNoticeTime<10?-(10-g.gunNoticeTime)*13:0;
     int bounce=bloom::sine(elapsed/2)/40;
-    const char *lines[]={"SWITCHED","GUN!"};
+    const char *lines[]={g.focus?"NARROW":"SPREAD","FIRE!"};
     for(unsigned i=0;i<2;++i) {
-        int x=(128-gfx_textWidthScaled(lines[i],2))/2-slide,y=14+i*16+bounce;
+        int x=(128-gfx_textWidthScaled(lines[i],2))/2-slide,y=20+i*16+bounce;
         gfx_textScaled(x+1,y+1,lines[i],Black,2);
         gfx_textScaled(x,y,lines[i],i?White:Cyan,2);
     }
-    center(46,g.focus?"NARROW FIRE":"WIDE FIRE",Gold);
 
 }
 }

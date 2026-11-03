@@ -18,7 +18,7 @@ Normal-speed excerpts from one simulator campaign, showing movement, gun switchi
 
 Wave 3 opens with standalone **“Move up and down!”** text that gently zooms out over the frozen playfield when free flight unlocks.
 
-Wave 5 introduces spread fire with standalone **“Focus fire with Select!”** text that gently zooms out over the frozen playfield. SELECT then switches between wide coverage and a tighter stream for concentrating shots on a target. Movement stays at full speed. **“Switched gun!”** confirms each change, and the circle around the ship stays visible in narrow mode. The selector is inactive during waves 1–4. Bombs appear as small rings with center dots beside **B** in the bottom HUD.
+Wave 5 introduces spread fire with standalone **“Focus fire with Select!”** text that gently zooms out over the frozen playfield. SELECT then switches between wide coverage and a tighter stream for concentrating shots on a target. Movement stays at full speed. **“Narrow fire!”** or **“Spread fire!”** confirms the selected mode, and the circle around the ship stays visible in narrow mode. The selector is inactive during waves 1–4. Bombs appear as small rings with center dots beside **B** in the bottom HUD.
 
 The existing web emulator uses **arrows / WASD**, **X / Space** for A, **Z** for B, **Right Shift / Backspace** for SELECT, and **Enter** for START. The playable preview also supplies touch controls.
 
