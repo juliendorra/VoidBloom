@@ -105,8 +105,10 @@ The connected Rev0 passed boot-off, immediate pause stop, all three ripple crest
 
 The user reported that hit and bomb feedback still felt alike on the motor. The first pattern's 67 ms gaps were verified in the controller but did not establish perceptual separation. This revision shortens damage to one full-strength 80 ms knock. The bomb uses two broader waves with a 167 ms fully-off interval, then a fading second wave, still tied to the 30-frame blast. The wider gap is intended to let the ERM coast down; actual perceived distinction requires feedback on the pack.
 
-The 1.3.1 console timing check confirmed both crests, the longer gap, pause stop and stalled-loop expiry. The game build was restored and accepted CRC `E0276BE5`. Perceived separation on the pack remains pending user feedback.
+The 1.3.1 console timing check confirmed both crests, the longer gap, pause stop and stalled-loop expiry. The game build was restored and accepted CRC `E0276BE5`.
 
 ## Isolated haptic diagnosis
 
-After another report of similar feel, a diagnostic-only A/B screen isolates the cues with sound disabled and no enemies or automatic kill feedback. Actual hardware register samples confirm full-scale PWM compare 1000 for the hit and first bomb crest, zero compare and disabled timer interrupt during the bomb gap, and compare 921 for its second crest. PC0 remains in alternate-function mode 11 with TIM2 remap 6. The output indicator reads the compare register rather than inferring output from the event flags. START returns to normal play. Perceptual distinction and any vibration persisting during the off interval require user observation.
+After another report of similar feel, a diagnostic-only A/B screen isolates the cues with sound disabled and no enemies or automatic kill feedback. Actual hardware register samples confirm full-scale PWM compare 1000 for the hit and first bomb crest, zero compare and disabled timer interrupt during the bomb gap, and compare 921 for its second crest. PC0 remains in alternate-function mode 11 with TIM2 remap 6. The output indicator reads the compare register rather than inferring output from the event flags. START returns to normal play.
+
+On 3 November 2026, the user confirmed: “Yes, it stops between waves.” This establishes a perceptible off interval on the actual rumble pack, without rating the overall subjective feel. The normal 1.3.1 game was then flashed and launched again with CRC `E0276BE5`; the diagnostic is excluded from ordinary release builds.

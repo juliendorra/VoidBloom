@@ -49,5 +49,14 @@
     "PC0_pin_mode"
   ],
   "diagnostic_firmware_crc32": "D5C0AC74",
-  "perceptual_validation": "requires user: does the motor stop while indicator says OFF?"
+  "perceptual_validation": "User confirms the motor stops between bomb waves during the sound-muted A/B comparison.",
+  "user_feedback": {
+    "question": "During B, does the motor stop when MOTOR OUTPUT OFF appears?",
+    "answer": "Yes, it stops between waves",
+    "scope": "Confirms the perceptible off interval; does not rate the overall subjective feel."
+  },
+  "normal_game_restored": {
+    "version": "1.3.1",
+    "firmware_crc32": "E0276BE5"
+  }
 }
