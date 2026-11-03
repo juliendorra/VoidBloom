@@ -65,8 +65,8 @@ def choose_excerpt(plan, wave, length):
 def evolution_excerpt(plan, wave):
     for i in range(0, len(plan)-6, 2):
         rows = plan[i:i+6]
-        if all(r['screen'] == 4 and r['wave'] == wave and (70 <= r['transition'] <= 180 if wave == 5 else 65 <= r['transition'] <= 115) for r in rows):
-            return {'name': f'evolution-{wave:02d}', 'wave': wave, 'start_frame': i*6, 'end_frame': i*6+(108 if wave == 5 else 36)}
+        if all(r['screen'] == 4 and r['wave'] == wave and 70 <= r['transition'] <= (180 if wave == 5 else 135) for r in rows):
+            return {'name': f'evolution-{wave:02d}', 'wave': wave, 'start_frame': i*6, 'end_frame': i*6+108}
     raise AssertionError(f'Missing natural evolution before wave {wave}')
 
 
@@ -120,8 +120,9 @@ def record():
         assert not transport.bugs, transport.bugs
     finally:
         transport.close()
-    unlock = next(c['frames'] for c in clips if c['name']=='evolution-05')
-    save_gif([f.resize((384,384), Image.Resampling.NEAREST) for f in unlock], docs/'focus-unlock.gif', [60,70,70]*(len(unlock)//3))
+    for wave, name in [(3, 'movement-unlock.gif'), (5, 'focus-unlock.gif')]:
+        unlock = next(c['frames'] for c in clips if c['name']==f'evolution-{wave:02d}')
+        save_gif([f.resize((384,384), Image.Resampling.NEAREST) for f in unlock], docs/name, [60,70,70]*(len(unlock)//3))
     native_frames = title+[frame for clip in clips for frame in clip['frames']]
     assert len(native_frames) % 3 == 0
     # GIF time is quantized to 10 ms. Three samples cover twelve updates:

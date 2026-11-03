@@ -2,7 +2,7 @@
 
 An endless arcade shooter that starts with monochrome marching invaders and transforms into a neon bullet storm. Evolve your ship, thread the gaps, and bring down the Bloom Cores.
 
-![Void Bloom gameplay](docs/gameplay.gif?preview=fdca42d66e2b)
+![Void Bloom gameplay](docs/gameplay.gif?preview=24752a5112c3)
 
 Normal-speed excerpts from one simulator campaign, showing movement, gun switching, and weapon upgrades.
 
@@ -15,6 +15,8 @@ Normal-speed excerpts from one simulator campaign, showing movement, gun switchi
 | B | Press for a panic bomb; title: controls; pause: end run |
 | SELECT | Toggle wide/narrow fire from wave 5; title/pause: toggle sound |
 | START | Pause/resume |
+
+Wave 3 opens with a big animated **“Move up and down!”** prompt when free flight unlocks.
 
 Wave 5 introduces spread fire with an animated **“Focus fire with Select!”** prompt. SELECT then switches between wide coverage and a tighter stream for concentrating shots on a target. Movement stays at full speed. **“Switched gun!”** confirms each change, and the circle around the ship stays visible in narrow mode. The selector is inactive during waves 1–4. Bombs appear as small rings with center dots beside **B** in the bottom HUD.
 

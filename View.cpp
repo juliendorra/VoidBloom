@@ -211,6 +211,19 @@ void evolution(const bloom::Game &g) {
         unsigned a=i*2+g.tick/3;int r=20+int(g.transition%40);
         gfx_pixel(64+bloom::sine(a+8)*r/64,59+bloom::sine(a)*r/64,i%2?Pink:Cyan);
     }
+    if(g.wave==3) {
+        panel(30,75);center(36,"FREE FLIGHT / WAVE 3",Dim);
+        int elapsed=135-g.transition;
+        int slide=elapsed<18?(18-elapsed)*7:0;
+        int bounce=bloom::sine(elapsed/3)/24;
+        const char *lines[]={"MOVE UP","AND DOWN!"};
+        for(unsigned i=0;i<2;++i)
+            gfx_textScaled((128-gfx_textWidthScaled(lines[i],2))/2-slide,
+                48+i*21+bounce,lines[i],i?White:Cyan,2);
+        center(94,"USE THE D-PAD",Gold);
+        center(113,"TWIN SHOT + BOMB +1",Dim);
+        return;
+    }
     if(g.gunNotice==bloom::FocusUnlocked) {
         panel(30,75);center(36,"NEW WEAPON / SURGE",Dim);
         int elapsed=180-g.gunNoticeTime;
