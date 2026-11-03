@@ -6,7 +6,7 @@ namespace bloom {
 constexpr int Q = 64, BULLETS = 192, SHOTS = 40, ENEMIES = 24, SPARKS = 32;
 // The HUD starts below row 119. Reserve the complete ship footprint,
 // including focus markers and the longest animated exhaust plume.
-constexpr int FIELD_TOP=11, FIELD_BOTTOM=119;
+constexpr int FIELD_TOP=11, FIELD_BOTTOM=119, BOMB_FRAMES=30;
 constexpr int SHIP_SIDE=7, SHIP_ABOVE=6, SHIP_BELOW=7;
 constexpr int PLAYER_MIN_X=SHIP_SIDE, PLAYER_MAX_X=127-SHIP_SIDE;
 constexpr int PLAYER_MIN_Y=58, PLAYER_MAX_Y=FIELD_BOTTOM-SHIP_BELOW;
@@ -16,7 +16,7 @@ enum GunNotice : uint8_t { NoGunNotice, SwitchedGun, FocusUnlocked };
 enum Kind : uint8_t { Invader=1, Scout, Weaver, Turret, Boss };
 enum Flight : uint8_t { InFormation, Charging, Looping, Diving, Returning };
 enum Event : uint16_t { Shot=1, Kill=2, Hurt=4, Burst=8, Evolve=16, Clear=32, Graze=64, Beat=128,
-    BodyImpact=256, BulletImpact=512, FormationImpact=1024, GunSwitch=2048 };
+    BodyImpact=256, BulletImpact=512, FormationImpact=1024, GunSwitch=2048, BossDown=4096 };
 struct Bullet { int16_t x=0,y=0,vx=0,vy=0; uint8_t kind=0; };
 struct Enemy {
     int16_t x=0,y=0,home=0,originY=0,target=0; uint16_t age=0,hp=0,maxHp=0;

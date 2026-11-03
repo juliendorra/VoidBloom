@@ -1,0 +1,42 @@
+{
+  "board": "CHGame Rev0 CX35",
+  "driver": "Pinball GPIO1/PC0 TIM2 CH4",
+  "boot_off": true,
+  "bomb_strength": 235,
+  "bomb_refresh_remaining_ms": 25,
+  "bomb_ripple_frames": 30,
+  "bomb_ripple_samples": [
+    {
+      "flash": 30,
+      "strength": 235
+    },
+    {
+      "flash": 24,
+      "strength": 0
+    },
+    {
+      "flash": 20,
+      "strength": 210
+    },
+    {
+      "flash": 14,
+      "strength": 0
+    },
+    {
+      "flash": 10,
+      "strength": 185
+    },
+    {
+      "flash": 0,
+      "strength": 0
+    }
+  ],
+  "pause_immediate_stop": true,
+  "expired_without_game_frames": true,
+  "debug_firmware_sha256": "1c07455f0e5c0da6ce271fabda5022e8ab373514d8f0779d4d41addfaf488925",
+  "limits": [
+    "Timer/controller state verified on the actual device; motor feel is a human check."
+  ],
+  "release_restored": true,
+  "release_crc32": "45F981D5"
+}

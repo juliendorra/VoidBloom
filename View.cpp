@@ -185,7 +185,7 @@ void field(const bloom::Game &g) {
     if(!g.invincible || (g.invincible/5)%2==0)
         ship(g.px/bloom::Q,g.py/bloom::Q,g.phase,g.focus,sceneTick(g));
     if(g.bombFlash) {
-        int radius=(30-g.bombFlash)*6;
+        int radius=(bloom::BOMB_FRAMES-g.bombFlash)*6;
         gfx_circle(g.px/bloom::Q,g.py/bloom::Q,radius,Cyan);
         gfx_circle(g.px/bloom::Q,g.py/bloom::Q,radius+3,White);
     }

@@ -6,7 +6,7 @@ TESTS = {
     "rules": {"sources": ["tools/tests/rules.cpp", "Game.cpp"], "args": "none"},
     "pilots": {"sources": ["tools/tests/pilots.cpp", "Game.cpp"], "run": False},
 }
-EXTRA_TEST_SCRIPTS = ["tools/verify_sim.py", "tools/verify_boundaries.py"]
+EXTRA_TEST_SCRIPTS = ["tools/verify_rumble.py", "tools/verify_sim.py", "tools/verify_boundaries.py"]
 
 def after_tests(ctx, exes):
     ctx.out.mkdir(exist_ok=True)

@@ -103,7 +103,7 @@ void Game::damage(Enemy &e,unsigned amount) {
     events|=Kill;shake=boss?14:2;
     if(boss) {
         clear(bullets,BULLETS);if(bombs<5)++bombs;
-        points(500*combo);events|=Clear;
+        points(500*combo);events|=Clear|BossDown;
     }
 }
 void Game::emit(int x,int y,int vx,int vy,unsigned kind) {
@@ -150,7 +150,7 @@ void Game::bomb() {
     if(!bombs || screen!=Play)return;
     --bombs;points(liveBullets()*5);clear(bullets,BULLETS);
     for(auto &e:enemies)if(e.kind)damage(e,e.kind==Boss?24:20);
-    invincible=100;bombFlash=30;shake=12;events|=Burst;
+    invincible=100;bombFlash=BOMB_FRAMES;shake=12;events|=Burst;
 }
 void Game::hit() {
     if(invincible || screen!=Play)return;

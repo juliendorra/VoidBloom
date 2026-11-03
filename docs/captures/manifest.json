@@ -1,5 +1,5 @@
 {
-  "game_version": "1.2.0",
+  "game_version": "1.3.0",
   "source": "CHGame simulator; actual game rules and framebuffer",
   "capture": "staged wave starts; scripted opening controls and delayed-observation pilot replay; normal damage, no invulnerability",
   "timing": "60 Hz simulation, one GIF frame per 6 updates, 100 ms per GIF frame; real play speed",
@@ -60,8 +60,8 @@
       "file": "wave-06-focused-spread.gif",
       "moment": "Spread fire and dodging between turret volleys",
       "duration_ms": 6000,
-      "size_bytes": 334673,
-      "sha256": "72854e4392461cf1ce4ac9e77d425e2c8c51fe8f5255f7a9bf01700ac69cb211",
+      "size_bytes": 328692,
+      "sha256": "6624fe8d640bc95ac6fe8d96fd9d96d08b0912b67e90aab02302e95eb63d08fe",
       "peak_hostile_bullets": 17,
       "lives_lost": 0
     },
@@ -80,8 +80,8 @@
       "file": "wave-08-nova-boss.gif",
       "moment": "Denser boss rings, fans, and rotating streams",
       "duration_ms": 10000,
-      "size_bytes": 578650,
-      "sha256": "c2c299cf5aecaaded5251cd9179b579643627ee11ad6571f094d1b7e3a98f04d",
+      "size_bytes": 572971,
+      "sha256": "1928fb0b90d39a4a07ffc28a7bdb46608f3493bb2a4bb965b8ee9920cee93ae9",
       "peak_hostile_bullets": 55,
       "lives_lost": 0
     },
@@ -120,8 +120,8 @@
       "file": "wave-12-infinity-boss.gif",
       "moment": "The first full-progression boss and its largest patterns",
       "duration_ms": 10000,
-      "size_bytes": 628737,
-      "sha256": "7c1efab0c415b373f37fe7558dcb5f5c0ebf93202ccd4a02e494707c6be88800",
+      "size_bytes": 623886,
+      "sha256": "59c616f674c43f6ee8c4c31aaaa17408467d34156f8657b0ac2a8d7024cd500a",
       "peak_hostile_bullets": 102,
       "lives_lost": 0
     }

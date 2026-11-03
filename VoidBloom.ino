@@ -2,6 +2,8 @@
 #include <CHGame.h>
 #include "Game.h"
 #include "View.h"
+#include "Haptics.h"
+#include "src/rumble/Rumble.h"
 
 bloom::Game game;
 struct Record { uint32_t high=0;uint8_t muted=0; } record;
@@ -43,16 +45,23 @@ static bool debug(char command,const char *args) {
     }
 #endif
     if(command!='H')return false;
-    char line[220];
-    snprintf(line,sizeof line,"BLOOMSTATE %u %u %u %u %lu %lu %u %u %d %d %u %u %u %u %u %u %u %u %u %u\n",
-        game.screen,game.wave,game.phase,game.lives,(unsigned long)game.score,(unsigned long)game.tick,
-        game.bombs,game.combo,game.px,game.py,game.liveBullets(),game.liveEnemies(),game.transition,
-        game.invincible,game.graze,game.focus,game.muted,game.remaining,game.gunNotice,game.gunNoticeTime);
+    // Avoid variadic printf on the handheld's compact C runtime.
+    const uint32_t values[]={game.screen,game.wave,game.phase,game.lives,game.score,game.tick,
+        game.bombs,game.combo,uint32_t(game.px),uint32_t(game.py),game.liveBullets(),game.liveEnemies(),
+        game.transition,game.invincible,game.graze,game.focus,game.muted,game.remaining,
+        game.gunNotice,game.gunNoticeTime,rumble::level(),rumble::remaining()};
+    char line[260];char *out=fmtStr(line,"BLOOMSTATE");
+    for(uint32_t value:values) {
+        *out++=' ';char digits[10];unsigned n=0;
+        do {digits[n++]=char('0'+value%10);value/=10;}while(value);
+        while(n)*out++=digits[--n];
+    }
+    *out++='\n';*out=0;
     dbg::print(line);return true;
 }
 #endif
 void setup() {
-    chgame.boot();dbg::begin("BLOOM 1.2.2");
+    chgame.boot();dbg::begin("BLOOM 1.3.0");
 #if CHGAME_DEBUG
     dbg::hook=debug;
 #endif
@@ -60,6 +69,7 @@ void setup() {
     if(!save::load(SAVE_MAGIC,1,record))record=Record{};
     game.best=record.high;game.muted=record.muted;
     audio::begin(SOUNDS,sizeof SOUNDS/sizeof SOUNDS[0],!game.muted);
+    haptics::begin();
 }
 static void sound() {
     using namespace bloom;
@@ -80,6 +90,7 @@ static void sound() {
     audio::update();
 }
 void loop() {
+    rumble::update();
     dbg::poll();if(!chgame.nextFrame())return;
     chgame.pollButtons();uint8_t keys=0;
     if(chgame.pressed(A_BUTTON))keys|=bloom::Fire;
@@ -90,7 +101,7 @@ void loop() {
     if(chgame.pressed(RIGHT_BUTTON))keys|=bloom::Right;
     if(chgame.pressed(START_BUTTON))keys|=bloom::Start;
     if(chgame.pressed(SELECT_BUTTON))keys|=bloom::Focus;
-    const auto previous=game.screen;game.update(keys);sound();
+    const auto previous=game.screen;game.update(keys);sound();haptics::update(game);
     if((game.screen==bloom::Over && previous!=bloom::Over) ||
        (game.screen==bloom::Title && previous==bloom::Paused) || record.muted!=game.muted) {
         record.high=game.best;record.muted=game.muted;savePending=true;

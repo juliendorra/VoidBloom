@@ -92,3 +92,11 @@ This produces the HTML fragment and a firmware hash manifest. Release ZIPs
 also include a standalone `index.html`, ready to open in a modern browser.
 The emulator executes the actual RISC-V firmware. Its MIT license is
 embedded in the page. The hosted emulator is linked from the main README.
+
+## Rumble checks
+
+`src/rumble` is copied unchanged from Pinball's reusable driver. The standard test command runs `tools/verify_rumble.py`, covering pulse expiry, the 500 ms cap, priorities, clock wrap, actual game-event routing, kill throttling, three frame-synchronized bomb ripples, and immediate pause/menu stop. Normal firing, grazes and music beats do not pulse the motor.
+
+For a connected Rev0, build both profiles, then run `python tools/verify_rumble_device.py`. It temporarily uploads the debug build, checks boot-off, all three bomb crests and their gaps, pause stop and IRQ expiry without advancing game frames, and restores the release. It writes `out/rumble/device-validation.json`. Physical motor feel remains a human check.
+
+`python tools/capture_switch.py` records the Narrow fire! and Spread fire! alerts at normal play speed.
