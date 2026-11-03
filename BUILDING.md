@@ -30,6 +30,11 @@ playtests. Results are written to `out/balance.json`.
 
 ## Console build and cartridge
 
+The dedicated menu cover has a native indexed source and editable letter
+stencils in `tools/cart.py`. Regenerate the cover, decoded device preview,
+palette report, and native picture with `python tools/cart.py`.
+`python chgame.py boxart` also rebuilds the packaged `docs/cart.png`.
+
 Install [Arduino CLI](https://arduino.github.io/arduino-cli/) and the
 [CHGame board package](https://github.com/bateske/CHGame#installing).
 With the Python environment above active:

@@ -1,0 +1,35 @@
+{
+  "size": [
+    128,
+    128
+  ],
+  "roles": {
+    "void": "000011",
+    "nebula": "111133",
+    "steel": "334466",
+    "cobalt": "3344AA",
+    "cyan": "33DDEE",
+    "ice": "BBFFFF",
+    "rose": "FF4488",
+    "blush": "FFAADD",
+    "gold": "FFEE88",
+    "cream": "FFF4D6",
+    "black": "000000"
+  },
+  "used_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "indexed_pixels_sha256": "2f380f61d503e14ea051898843ca6ecefe048937607063541072c5dd132cb803",
+  "picture_sha256": "f7dc9355bab6ec84a3d5d31e7db865fa759e5f2b048458a99a5f142bad1bda10",
+  "picture_bytes": 8704
+}
