@@ -3,161 +3,237 @@
   "category": "Dorra's",
   "category_path": "GAMES/MYGAMESP",
   "target": "GAMES/MYGAMESP/VOIDBLOO.CHG",
-  "version": "1.2.2",
-  "chg_bytes": 71630,
-  "chg_sha256": "ecd51350f6088e93721e4001c9edf31838f66f3e7ab1ef64c1910b9c490508d5",
+  "version": "1.3.1",
+  "chg_bytes": 72179,
+  "chg_sha256": "0561b849e9eb113634aacf72fb8b9c2ad7cc1647b0275bb0d3168b9b2c9de836",
   "picture_bytes": 8704,
   "picture_sha256": "f7dc9355bab6ec84a3d5d31e7db865fa759e5f2b048458a99a5f142bad1bda10",
-  "firmware_bytes": 27528,
-  "firmware_sha256": "b213613183d755d54eaa77dab4a8ce3707495fcdca93725fd5fe2eb74f3ccee5",
-  "firmware_crc32": "62A6CB34",
+  "firmware_bytes": 28000,
+  "firmware_sha256": "1da0bfed6ba07089db5146ddb7882842dc899d38e5f86dc4c936830dfcca8bc0",
+  "firmware_crc32": "E0276BE5",
   "preserve_existing_category_cover": true,
   "menu_update": "reuse the existing game record; preserve all menu records and their order",
-  "previous_entries": [
-    "MIDNIGHT.CHG",
-    "MYSTICBA.CHG",
-    "ATMSOUND.CHG",
-    "LIGHTDRV.CHG",
-    "CLIMBING.CHG",
-    "TETRIS.CHG",
-    "CLAB1.CHG",
-    "CLAB2.CHG",
-    "CLAB3.CHG",
-    "CLAB4.CHG",
-    "CLAB5.CHG",
-    "VOIDBLOO.CHG"
-  ],
-  "next_entries": [
-    "MIDNIGHT.CHG",
-    "MYSTICBA.CHG",
-    "ATMSOUND.CHG",
-    "LIGHTDRV.CHG",
-    "CLIMBING.CHG",
-    "TETRIS.CHG",
-    "CLAB1.CHG",
-    "CLAB2.CHG",
-    "CLAB3.CHG",
-    "CLAB4.CHG",
-    "CLAB5.CHG",
-    "VOIDBLOO.CHG"
-  ],
+  "method": "CHSDtoSerial journaled file replacement; no host disk mount",
+  "previous_version": "1.2.2",
   "root_index_preserved": true,
   "all_other_menu_records_preserved": true,
-  "previous_files_content_verified": [
-    "CHCW/BONUS.CWD",
-    "GAMES/APPS/COVER.PIC",
-    "GAMES/APPS/MENU.IDX",
-    "GAMES/APPS/SDCARDRE.CHG",
-    "GAMES/APPS/SDREAD16.CHG",
-    "GAMES/APPS/SDTOSERI.CHG",
-    "GAMES/APPS/SDUSBBRI.CHG",
-    "GAMES/APPS/STLVIEWE.CHG",
-    "GAMES/COVER.PIC",
-    "GAMES/GAME/COVER.PIC",
-    "GAMES/GAME/ETHANSCR.CHG",
-    "GAMES/GAME/MENU.IDX",
-    "GAMES/MENU.BG",
-    "GAMES/MENU.IDX",
-    "GAMES/MYGAMESP/ATMSOUND.CHG",
-    "GAMES/MYGAMESP/CLAB1.CHG",
-    "GAMES/MYGAMESP/CLAB2.CHG",
-    "GAMES/MYGAMESP/CLAB3.CHG",
-    "GAMES/MYGAMESP/CLAB4.CHG",
-    "GAMES/MYGAMESP/CLAB5.CHG",
-    "GAMES/MYGAMESP/CLIMBING.CHG",
-    "GAMES/MYGAMESP/COVER.PIC",
-    "GAMES/MYGAMESP/LIGHTDRV.CHG",
-    "GAMES/MYGAMESP/MIDNIGHT.CHG",
-    "GAMES/MYGAMESP/MYSTICBA.CHG",
-    "GAMES/MYGAMESP/TETRIS.CHG",
-    "GAMES/SYSTEM.PIC",
-    "LIGHTDRV.SAV",
-    "MODELS/BOWL.STL",
-    "MODELS/CUBE.STL",
-    "MODELS/GEAR.STL",
-    "MODELS/ICOSPH.STL",
-    "MODELS/KNOT.STL",
-    "MODELS/TORUS.STL",
-    "MYBLSAVE.DAT",
-    "PHRASES.BNK",
-    "PINBALL/CARNIVAL.PBT",
-    "PINBALL/DRAGON.PBT",
-    "PINBALL/EDITLAB.PBT",
-    "PINBALL/MIDNIGHT.PBT",
-    "PINBALL/NEON.PBT",
-    "PINBALL/ORBITRON.PBT",
-    "PINBALL/PIRAT001.PBT",
-    "PINBALL/PIRATES.PBT",
-    "PINBALL/SHUTTLE.PBT",
-    "PINBALL/SOLAR.PBT",
-    "PINBALL/STORM.PBT",
-    "System Volume Information/IndexerVolumeGuid",
-    "WORDS.DIC"
-  ],
-  "previous_files_metadata_verified": [
-    "CHCW/BONUS.CWD",
-    "CRITTERS.DAT",
-    "GAMES/APPS/COVER.PIC",
-    "GAMES/APPS/MENU.IDX",
-    "GAMES/APPS/SDCARDRE.CHG",
-    "GAMES/APPS/SDREAD16.CHG",
-    "GAMES/APPS/SDTOSERI.CHG",
-    "GAMES/APPS/SDUSBBRI.CHG",
-    "GAMES/APPS/STLVIEWE.CHG",
-    "GAMES/COVER.PIC",
-    "GAMES/GAME/COVER.PIC",
-    "GAMES/GAME/ETHANSCR.CHG",
-    "GAMES/GAME/MENU.IDX",
-    "GAMES/MENU.BG",
-    "GAMES/MENU.IDX",
-    "GAMES/MYGAMESP/ATMSOUND.CHG",
-    "GAMES/MYGAMESP/CLAB1.CHG",
-    "GAMES/MYGAMESP/CLAB2.CHG",
-    "GAMES/MYGAMESP/CLAB3.CHG",
-    "GAMES/MYGAMESP/CLAB4.CHG",
-    "GAMES/MYGAMESP/CLAB5.CHG",
-    "GAMES/MYGAMESP/CLIMBING.CHG",
-    "GAMES/MYGAMESP/COVER.PIC",
-    "GAMES/MYGAMESP/LIGHTDRV.CHG",
-    "GAMES/MYGAMESP/MIDNIGHT.CHG",
-    "GAMES/MYGAMESP/MYSTICBA.CHG",
-    "GAMES/MYGAMESP/TETRIS.CHG",
-    "GAMES/SYSTEM.PIC",
-    "LIGHTDRV.SAV",
-    "MODELS/BOWL.STL",
-    "MODELS/CUBE.STL",
-    "MODELS/GEAR.STL",
-    "MODELS/ICOSPH.STL",
-    "MODELS/KNOT.STL",
-    "MODELS/TORUS.STL",
-    "MYBLSAVE.DAT",
-    "PHRASES.BNK",
-    "PINBALL/CARNIVAL.PBT",
-    "PINBALL/DRAGON.PBT",
-    "PINBALL/EDITLAB.PBT",
-    "PINBALL/MIDNIGHT.PBT",
-    "PINBALL/NEON.PBT",
-    "PINBALL/ORBITRON.PBT",
-    "PINBALL/PIRAT001.PBT",
-    "PINBALL/PIRATES.PBT",
-    "PINBALL/SHUTTLE.PBT",
-    "PINBALL/SOLAR.PBT",
-    "PINBALL/STORM.PBT",
-    "System Volume Information/IndexerVolumeGuid",
-    "WORDS.DIC"
-  ],
-  "uncached_readback_after_remount": true,
-  "volume_uuid": "F7081A3A-0225-32F3-8A43-9C10D8D65B34",
-  "installed_at": "2026-11-03T19:51:15.774254+00:00",
-  "ejected_safely": true,
+  "previous_files_crc_verified": {
+    "GAMES/COVER.PIC": {
+      "bytes": 8704,
+      "crc32": "C51D9E60"
+    },
+    "GAMES/GAME/ETHANSCR.CHG": {
+      "bytes": 67821,
+      "crc32": "DFEC25A3"
+    },
+    "GAMES/GAME/COVER.PIC": {
+      "bytes": 8704,
+      "crc32": "04B3BC15"
+    },
+    "GAMES/GAME/_COVE~3.PIC": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/GAME/MENU.IDX": {
+      "bytes": 64,
+      "crc32": "B467EB24"
+    },
+    "GAMES/GAME/_MEN~4.IDX": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MENU.BG": {
+      "bytes": 8704,
+      "crc32": "9E6BF5D2"
+    },
+    "GAMES/MENU.IDX": {
+      "bytes": 128,
+      "crc32": "C30A0F8C"
+    },
+    "GAMES/SYSTEM.PIC": {
+      "bytes": 78336,
+      "crc32": "5A472DF6"
+    },
+    "GAMES/APPS/COVER.PIC": {
+      "bytes": 8704,
+      "crc32": "137578C7"
+    },
+    "GAMES/APPS/MENU.IDX": {
+      "bytes": 192,
+      "crc32": "7189E242"
+    },
+    "GAMES/APPS/SDCARDRE.CHG": {
+      "bytes": 103370,
+      "crc32": "602F834F"
+    },
+    "GAMES/APPS/SDTOSERI.CHG": {
+      "bytes": 108838,
+      "crc32": "D460F841"
+    },
+    "GAMES/APPS/STLVIEWE.CHG": {
+      "bytes": 47560,
+      "crc32": "5D05B6E1"
+    },
+    "GAMES/APPS/_SDCAR~8.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/APPS/SDUSBBRI.CHG": {
+      "bytes": 101841,
+      "crc32": "24E6214A"
+    },
+    "GAMES/APPS/_SDUS~11.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/APPS/_MEN~11.IDX": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/APPS/SDREAD16.CHG": {
+      "bytes": 101337,
+      "crc32": "6EF0ED6E"
+    },
+    "GAMES/APPS/_SDREA~9.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/_GAM~8": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/MIDNIGHT.CHG": {
+      "bytes": 64046,
+      "crc32": "9BA4FC72"
+    },
+    "GAMES/MYGAMESP/MYSTICBA.CHG": {
+      "bytes": 71111,
+      "crc32": "E53E7343"
+    },
+    "GAMES/MYGAMESP/CLIMBING.CHG": {
+      "bytes": 32144,
+      "crc32": "01CF27CD"
+    },
+    "GAMES/MYGAMESP/MENU.IDX": {
+      "bytes": 416,
+      "crc32": "465B2989"
+    },
+    "GAMES/MYGAMESP/_MEN~46.IDX": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/COVER.PIC": {
+      "bytes": 8704,
+      "crc32": "BB06EBA0"
+    },
+    "GAMES/MYGAMESP/_COVE~17.PIC": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/_MIDN~17.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/_MYST~25.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/_CLIM~17.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/ATMSOUND.CHG": {
+      "bytes": 56864,
+      "crc32": "7F2851A3"
+    },
+    "GAMES/MYGAMESP/_ATMS~18.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/CLAB1.CHG": {
+      "bytes": 34382,
+      "crc32": "A1D9D64E"
+    },
+    "GAMES/MYGAMESP/_CLAB~25.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/TETRIS.CHG": {
+      "bytes": 78682,
+      "crc32": "B905BB7A"
+    },
+    "GAMES/MYGAMESP/_TETR~25.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/CLAB2.CHG": {
+      "bytes": 34639,
+      "crc32": "9E6E0FFE"
+    },
+    "GAMES/MYGAMESP/CLAB3.CHG": {
+      "bytes": 34097,
+      "crc32": "515C192A"
+    },
+    "GAMES/MYGAMESP/_CLAB~26.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/CLAB4.CHG": {
+      "bytes": 34397,
+      "crc32": "3E3F96B2"
+    },
+    "GAMES/MYGAMESP/_CLAB~27.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/CLAB5.CHG": {
+      "bytes": 33850,
+      "crc32": "86E546B7"
+    },
+    "GAMES/MYGAMESP/_CLAB~28.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/LIGHTDRV.CHG": {
+      "bytes": 92429,
+      "crc32": "D1B616E6"
+    },
+    "GAMES/MYGAMESP/_LIGH~43.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/MYGAMESP/_VOID~43.CHG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/_MYGA~19": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/_MEN~15.IDX": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/_COVE~15.PIC": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    },
+    "GAMES/_MEN~16.BG": {
+      "bytes": 4096,
+      "crc32": "44A088F3"
+    }
+  },
+  "fresh_helper_mount_readback": true,
+  "installed_at": "2026-11-03T23:13:16.623964+00:00",
+  "serial_helper_sha256": "2049fd8471588184351cba672a5f594d06421d582b5bb338aaf87d1915861430",
   "flash": {
-    "bytes": 27528,
-    "crc32": 1655098164,
+    "bytes": 28000,
+    "crc32": 3760679909,
     "chunk": 256,
-    "erase_s": 0.0035129589959979057,
-    "write_s": 0.9305853749974631,
-    "total_s": 1.0188182090059854,
-    "kbps": 28.888066825758234,
+    "erase_s": 0.0034831670000130543,
+    "write_s": 1.0871836249998523,
+    "total_s": 1.1767172079999,
+    "kbps": 25.150995076847035,
     "port": "/dev/cu.usbmodem1101",
     "app_port": "/dev/cu.usbmodem1101"
   },
