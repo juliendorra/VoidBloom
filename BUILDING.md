@@ -100,3 +100,9 @@ embedded in the page. The hosted emulator is linked from the main README.
 For a connected Rev0, build both profiles, then run `python tools/verify_rumble_device.py`. It temporarily uploads the debug build, checks boot-off, both bomb crests and their 167 ms gap, pause stop and IRQ expiry without advancing game frames, and restores the release. It writes `out/rumble/device-validation.json`. Physical motor feel remains a human check.
 
 `python tools/capture_switch.py` records the Narrow fire! and Spread fire! alerts at normal play speed.
+
+## Isolated motor comparison
+
+The optional `BLOOM_HAPTIC_PROBE` debug define starts a sound-muted A/B screen. A triggers an isolated damage cue, B triggers the bomb, and START returns to the game. The indicator reads the actual TIM2 CH4 compare register on the handheld; serial command `V` reports controller strength/time, PWM compare, IRQ enable, TIM2 remap and PC0 mode. The comparison is absent from ordinary builds. The `-D` build option passes raw compiler flags, so use `python chgame.py build --debug -D=-DBLOOM_HAPTIC_PROBE=1`.
+
+This separates a different electrical output from a perceptually different motor response. Device register checks alone cannot confirm how the mounted pack feels.

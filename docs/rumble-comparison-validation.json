@@ -1,0 +1,53 @@
+{
+  "mode": "sound-muted A/B comparison; A=hit, B=bomb; START=game",
+  "hit": [
+    255,
+    70,
+    1000,
+    1,
+    6,
+    11
+  ],
+  "hit_after_120ms": [
+    0,
+    0,
+    0,
+    0,
+    6,
+    11
+  ],
+  "bomb": [
+    255,
+    31,
+    1000,
+    1,
+    6,
+    11
+  ],
+  "gap": [
+    0,
+    0,
+    0,
+    0,
+    6,
+    11
+  ],
+  "second_wave": [
+    235,
+    21,
+    921,
+    1,
+    6,
+    11
+  ],
+  "field_order": [
+    "controller_strength",
+    "remaining_ms",
+    "TIM2_CH4_compare",
+    "timer_irq_enabled",
+    "TIM2_remap",
+    "PC0_pin_mode"
+  ],
+  "diagnostic_firmware_crc32": "D5C0AC74",
+  "perceptual_validation": "requires user: does the motor stop while indicator says OFF?"
+}

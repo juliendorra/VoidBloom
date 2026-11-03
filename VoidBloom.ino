@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "View.h"
 #include "Haptics.h"
+#include "HapticProbe.h"
 #include "src/rumble/Rumble.h"
 
 bloom::Game game;
@@ -21,6 +22,9 @@ const audio::Effect SOUNDS[]={AUDIO_EFFECT(FIRE_SOUND,audio::SOFT),AUDIO_EFFECT(
 
 #if CHGAME_DEBUG
 static bool debug(char command,const char *args) {
+#if defined(BLOOM_HAPTIC_PROBE)
+    if(hapticprobe::command(command))return true;
+#endif
 #if defined(CHSIM) && defined(BLOOM_CAPTURE)
     // Empty arena for exercising controls and comparing the whole ship
     // against an unclipped reference. Never compiled into firmware.
@@ -70,6 +74,9 @@ void setup() {
     game.best=record.high;game.muted=record.muted;
     audio::begin(SOUNDS,sizeof SOUNDS/sizeof SOUNDS[0],!game.muted);
     haptics::begin();
+#if defined(BLOOM_HAPTIC_PROBE)
+    hapticprobe::begin(game);
+#endif
 }
 static void sound() {
     using namespace bloom;
@@ -92,7 +99,11 @@ static void sound() {
 void loop() {
     rumble::update();
     dbg::poll();if(!chgame.nextFrame())return;
-    chgame.pollButtons();uint8_t keys=0;
+    chgame.pollButtons();
+#if defined(BLOOM_HAPTIC_PROBE)
+    if(hapticprobe::frame(game))return;
+#endif
+    uint8_t keys=0;
     if(chgame.pressed(A_BUTTON))keys|=bloom::Fire;
     if(chgame.pressed(B_BUTTON))keys|=bloom::Bomb;
     if(chgame.pressed(UP_BUTTON))keys|=bloom::Up;
