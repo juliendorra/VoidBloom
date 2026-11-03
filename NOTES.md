@@ -88,3 +88,7 @@ Rules checks cover early-wave lockout, one toggle per press, no automatic firing
 ## Free-flight introduction (1.2.1)
 
 The first frame of wave 3's existing evolution transition now introduces vertical movement with a large animated “Move up and down!” message. Two centered lines slide in and bounce vertically above a D-pad reminder. The introduction uses the existing transition clock, so combat timing, movement, weapons, and difficulty are unchanged. The normal campaign replay records it in `docs/movement-unlock.gif` and the README sequence.
+
+## Standalone tutorial text (1.2.2)
+
+The wave-3 movement and wave-5 gun introductions now draw only large outlined words over the frozen start of the level. The text shrinks gently by about 11% during the first 90 frames, then holds. Panel borders, auxiliary captions, sliding and bouncing are removed from these two introductions. Fractional nearest-neighbor scaling uses the existing CHGfx 5×7 glyphs. The starfield and ship exhaust use the fixed entry clock; outgoing-wave sparks are hidden. Gameplay rules and transition durations are unchanged. The normal campaign capture checks that background pixels outside the text stay identical while the text bounds shrink.

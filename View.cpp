@@ -1,4 +1,5 @@
 #include <CHGame.h>
+#include <CHGfx_font.h>
 #include "View.h"
 
 namespace view {
@@ -24,9 +25,44 @@ void number(int x,int y,unsigned n,unsigned c) {char text[12];fmtInt(text,n);tex
 void big(int y,const char *s,unsigned c,unsigned scale) {
     gfx_textScaled((128-gfx_textWidthScaled(s,scale))/2,y,s,c,scale);
 }
+bool tutorial(const bloom::Game &g) {
+    return g.screen==bloom::Evolution && (g.wave==3 || g.gunNotice==bloom::FocusUnlocked);
+}
+unsigned sceneTick(const bloom::Game &g) {
+    // Only the words animate over the new wave's frozen playfield.
+    return tutorial(g)?g.tick-((g.wave==3?135:180)-g.transition):g.tick;
+}
+void zoomWords(int cy,const char *s,unsigned color,int scale) {
+    unsigned length=0;while(s[length])++length;
+    int width=((int(length)*6-1)*scale+128)/256;
+    int x=(128-width)/2,y=cy-(7*scale+128)/512;
+    // Fractional nearest-neighbor scaling of the existing CHGfx glyphs.
+    // Paint the outline first so adjacent letter blocks never erase ink.
+    for(unsigned pass=0;pass<2;++pass)for(unsigned i=0;i<length;++i) {
+        const uint8_t *glyph=chgfx_font5x7+(s[i]-32)*5;
+        for(int col=0;col<5;++col)for(int row=0;row<7;++row)if(glyph[col]&(1u<<row)) {
+            int left=x+((int(i)*6+col)*scale+128)/256;
+            int right=x+((int(i)*6+col+1)*scale+128)/256;
+            int top=y+(row*scale+128)/256,bottom=y+((row+1)*scale+128)/256;
+            gfx_fillRect(left-(pass?0:1),top-(pass?0:1),right-left+(pass?0:2),bottom-top+(pass?0:2),pass?color:Black);
+        }
+    }
+}
+void tutorialWords(const bloom::Game &g) {
+    int elapsed=(g.wave==3?135:180)-g.transition;
+    int t=elapsed<90?elapsed:90;
+    int zoom=288-32*t*(180-t)/8100;
+    if(g.wave==3) {
+        zoomWords(49,"MOVE UP",Cyan,512*zoom/256);
+        zoomWords(73,"AND DOWN!",White,512*zoom/256);
+    } else {
+        zoomWords(49,"FOCUS FIRE",Cyan,450*zoom/256);
+        zoomWords(73,"WITH SELECT!",White,380*zoom/256);
+    }
+}
 void stars(const bloom::Game &g,bool moving=true) {
     gfx_clear(Black);
-    const unsigned t=moving?g.tick:0;
+    const unsigned t=moving?sceneTick(g):0;
     for(unsigned i=0;i<32;++i) {
         int x=(i*37+19)%128,y=(i*i*13+(t/(i%3+1)))%116+10;
         gfx_pixel(x,y,i%7?Grid:Dim);
@@ -34,10 +70,10 @@ void stars(const bloom::Game &g,bool moving=true) {
     }
     if(g.phase>=2) {
         for(unsigned j=0;j<3;++j) {
-            int radius=(j*30+g.tick/5)%94;
+            int radius=(j*30+t/5)%94;
             int lastX=0,lastY=0;
             for(unsigned k=0;k<=8;++k) {
-                unsigned a=k*4+g.tick/80;
+                unsigned a=k*4+t/80;
                 int x=64+bloom::sine(a+8)*radius/64,y=53+bloom::sine(a)*radius/64;
                 if(k)gfx_line(lastX,lastY,x,y,Grid);
                 lastX=x;lastY=y;
@@ -127,7 +163,7 @@ void field(const bloom::Game &g) {
         int x=b.x/bloom::Q,y=b.y/bloom::Q;
         gfx_vline(x,y,4,g.phase||g.wave==2?Cyan:White);gfx_pixel(x,y,White);
     }
-    for(const auto &s:g.sparks)if(s.life) {
+    for(const auto &s:g.sparks)if(s.life && !tutorial(g)) {
         unsigned color=s.life>14?White:s.color==3?Pink:Gold;
         gfx_pixel(s.x/bloom::Q,s.y/bloom::Q,color);
         if(s.life>20)gfx_pixel(s.x/bloom::Q+1,s.y/bloom::Q,color);
@@ -147,7 +183,7 @@ void field(const bloom::Game &g) {
         }
     }
     if(!g.invincible || (g.invincible/5)%2==0)
-        ship(g.px/bloom::Q,g.py/bloom::Q,g.phase,g.focus,g.tick);
+        ship(g.px/bloom::Q,g.py/bloom::Q,g.phase,g.focus,sceneTick(g));
     if(g.bombFlash) {
         int radius=(30-g.bombFlash)*6;
         gfx_circle(g.px/bloom::Q,g.py/bloom::Q,radius,Cyan);
@@ -207,34 +243,10 @@ void help() {
     center(121,"A / B BACK",Cyan);
 }
 void evolution(const bloom::Game &g) {
+    if(tutorial(g)) {tutorialWords(g);return;}
     for(unsigned i=0;i<16;++i) {
         unsigned a=i*2+g.tick/3;int r=20+int(g.transition%40);
         gfx_pixel(64+bloom::sine(a+8)*r/64,59+bloom::sine(a)*r/64,i%2?Pink:Cyan);
-    }
-    if(g.wave==3) {
-        panel(30,75);center(36,"FREE FLIGHT / WAVE 3",Dim);
-        int elapsed=135-g.transition;
-        int slide=elapsed<18?(18-elapsed)*7:0;
-        int bounce=bloom::sine(elapsed/3)/24;
-        const char *lines[]={"MOVE UP","AND DOWN!"};
-        for(unsigned i=0;i<2;++i)
-            gfx_textScaled((128-gfx_textWidthScaled(lines[i],2))/2-slide,
-                48+i*21+bounce,lines[i],i?White:Cyan,2);
-        center(94,"USE THE D-PAD",Gold);
-        center(113,"TWIN SHOT + BOMB +1",Dim);
-        return;
-    }
-    if(g.gunNotice==bloom::FocusUnlocked) {
-        panel(30,75);center(36,"NEW WEAPON / SURGE",Dim);
-        int elapsed=180-g.gunNoticeTime;
-        int slide=elapsed<18?(18-elapsed)*7:0;
-        int bounce=bloom::sine(g.tick/3)/32;
-        gfx_textScaled((128-gfx_textWidthScaled("FOCUS FIRE",2))/2-slide,48+bounce,"FOCUS FIRE",Cyan,2);
-        big(69,"WITH SELECT!",White,1);
-        center(85,"TOGGLE WIDE / NARROW",Gold);
-        center(96,"FULL SPEED IN BOTH MODES",Dim);
-        center(113,"B: BOMB   A: FIRE",Cyan);
-        return;
     }
     panel(34,64);center(41,"EVOLUTION",Dim);
     big(53,bloom::phaseName(g.phase),g.phase>=3?Pink:Cyan,1);

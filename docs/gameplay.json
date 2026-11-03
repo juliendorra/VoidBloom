@@ -1,5 +1,5 @@
 {
-  "game_version": "1.2.1",
+  "game_version": "1.2.2",
   "source": "Actual framebuffer of the normal CHGame simulator; one campaign from the title screen through wave 12",
   "controls": "100 ms delayed-observation pilot with ordinary fire, focus, movement and bombs; vertical patrol preference for the preview only",
   "cheats": false,
@@ -9,14 +9,30 @@
   "campaign_seconds": 184.3,
   "reached_wave": 13,
   "replay_state_comparisons": 1843,
+  "tutorial_checks": [
+    {
+      "wave": 3,
+      "background_samples": 23,
+      "background_frozen": true,
+      "first_text_width": 114,
+      "last_text_width": 102
+    },
+    {
+      "wave": 5,
+      "background_samples": 30,
+      "background_frozen": true,
+      "first_text_width": 117,
+      "last_text_width": 105
+    }
+  ],
   "gif_duration_ms": 19800,
   "gif_dimensions": [
     256,
     256
   ],
   "gif_samples_per_second": 15,
-  "gif_bytes": 956156,
-  "gif_sha256": "24752a5112c301e7ced289b95fd0465c60b0dda7474403feb3c3d768b34ea2b7",
+  "gif_bytes": 868053,
+  "gif_sha256": "4066726beaee9385caf4961945636e719d8af86afd8c8007238e8a70f8f4b436",
   "clips": [
     {
       "name": "wave-01",

@@ -1,0 +1,16 @@
+[
+  {
+    "wave": 3,
+    "background_samples": 23,
+    "background_frozen": true,
+    "first_text_width": 114,
+    "last_text_width": 102
+  },
+  {
+    "wave": 5,
+    "background_samples": 30,
+    "background_frozen": true,
+    "first_text_width": 117,
+    "last_text_width": 105
+  }
+]

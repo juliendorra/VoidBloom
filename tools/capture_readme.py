@@ -98,6 +98,7 @@ def record():
         driver.buttons(mask_of('A')); driver.frames(1); driver.buttons(0)
         assert state(driver)[0:3] == [2, 1, 0]
         compared = 0
+        intro_frames = {3: [], 5: []}
         fields = [(0, 'screen'), (1, 'wave'), (2, 'phase'), (3, 'lives'), (4, 'score'), (5, 'tick'),
                   (6, 'bombs'), (8, 'x'), (9, 'y'), (10, 'bullets'), (11, 'enemies'),
                   (12, 'transition'), (13, 'invincible'), (15, 'focus')]
@@ -116,10 +117,30 @@ def record():
                 driver.frames(6)
             actual = state(driver)
             assert all(actual[index] == expected[key] for index, key in fields), (i, actual, expected)
+            if actual[0] == 4 and actual[1] in intro_frames:
+                intro_frames[actual[1]].append(to_image(driver.shot(), 1))
             compared += 1
         assert not transport.bugs, transport.bugs
     finally:
         transport.close()
+    intro_checks = []
+    for wave, frames in intro_frames.items():
+        assert len(frames) > 15
+        # Outside the standalone words, every pixel must stay frozen.
+        for frame in frames[1:]:
+            for box in [(0, 0, 128, 36), (0, 86, 128, 128)]:
+                assert frame.crop(box).tobytes() == frames[0].crop(box).tobytes(), (wave, 'background moved')
+        def ink_width(frame):
+            ink = [(x, y) for y in range(36, 86) for x in range(128)
+                   if frame.getpixel((x, y)) in [(255, 255, 255), (51, 221, 238)]]
+            assert ink
+            return max(x for x, y in ink)-min(x for x, y in ink)+1
+        first, last = ink_width(frames[0]), ink_width(frames[-1])
+        assert first > last, (wave, 'text must zoom out', first, last)
+        intro_checks.append({'wave': wave, 'background_samples': len(frames), 'background_frozen': True,
+                             'first_text_width': first, 'last_text_width': last})
+    (docs/'tutorial-validation.json').write_text(json.dumps(intro_checks, indent=2)+'\n')
+    print('PASS: standalone tutorial text shrinks over frozen backgrounds:', intro_checks)
     for wave, name in [(3, 'movement-unlock.gif'), (5, 'focus-unlock.gif')]:
         unlock = next(c['frames'] for c in clips if c['name']==f'evolution-{wave:02d}')
         save_gif([f.resize((384,384), Image.Resampling.NEAREST) for f in unlock], docs/name, [60,70,70]*(len(unlock)//3))
@@ -148,7 +169,7 @@ def record():
                 'controls': '100 ms delayed-observation pilot with ordinary fire, focus, movement and bombs; vertical patrol preference for the preview only',
                 'cheats': False, 'stage_jumps': False, 'torn_frames': 0, 'seed': seed,
                 'campaign_seconds': len(plan)/10, 'reached_wave': plan[-1]['wave'],
-                'replay_state_comparisons': compared, 'gif_duration_ms': duration,
+                'replay_state_comparisons': compared, 'tutorial_checks': intro_checks, 'gif_duration_ms': duration,
                 'gif_dimensions': [128*scale, 128*scale], 'gif_samples_per_second': 15,
                 'gif_bytes': path.stat().st_size, 'gif_sha256': digest,
                 'clips': [{k: v for k, v in clip.items() if k != 'frames'} for clip in clips]}
