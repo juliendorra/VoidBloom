@@ -65,7 +65,7 @@ static bool debug(char command,const char *args) {
 }
 #endif
 void setup() {
-    chgame.boot();dbg::begin("BLOOM 1.3.1");
+    chgame.boot();dbg::begin("BLOOM 1.3.2");
 #if CHGAME_DEBUG
     dbg::hook=debug;
 #endif
@@ -80,19 +80,23 @@ void setup() {
 }
 static void sound() {
     using namespace bloom;
-    audio::setOn(!game.muted);
+    audio::setOn(!game.muted && game.screen!=Paused && game.screen!=Help);
     if(game.events&Evolve)audio::sfx(EvolveSound);
     else if(game.events&Hurt)audio::sfx(HurtSound);
     else if(game.events&Burst)audio::sfx(BombSound);
     else if(game.events&Clear)audio::sfx(ClearSound);
     else if(game.events&Kill)audio::sfx(KillSound);
     else if(game.events&GunSwitch)audio::blip(game.focus?1760:1320,90,true);
-    else if(game.events&Shot)audio::sfx(FireSound);
-    else if(game.events&Beat) {
+    else {
         // Original ascending pulse motif gains subdivisions with evolution.
         static const uint16_t notes[]={262,0,392,0,311,0,466,0,262,392,523,392,311,466,622,466};
         unsigned index=game.phase<2?(game.beat&7):game.beat;
-        if(notes[index])audio::blip(notes[index]*(game.phase>=3?2:1),game.phase?38:55,true);
+        // A held fire button must not erase a coincident music beat. The
+        // priority-1, full-width note survives priority-0 gun clicks;
+        // kills and important combat cues can still interrupt it.
+        if((game.events&Beat) && notes[index])
+            audio::note(notes[index]*(game.phase>=3?4:2),game.phase?38:55,1);
+        else if(game.events&Shot)audio::sfx(FireSound);
     }
     audio::update();
 }

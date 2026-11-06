@@ -64,3 +64,10 @@ Browse the [wave-by-wave GIF gallery](docs/captures/README.md) for key moments f
 ## Credits
 
 Original game rules, artwork, and pulse motif for a retro arcade shooter and bullet-heavy shoot 'em up. Uses Kevin Bates' CHGame / CHGfx libraries and the CHGame board package. Browser preview uses joyrider3774's CHGame emulator (MIT), executing the compiled RISC-V firmware.
+
+
+## Audio update 1.3.2
+
+The higher-register pulse motif now takes precedence over routine gun clicks and survives a held fire button. Kills and important combat cues can still interrupt it. Pause and Help silence the real timer.
+
+[Audio validation notes](docs/audio-update.md).
