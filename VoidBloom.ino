@@ -1,5 +1,6 @@
 // An original evolving arcade shooter for the 128x128 CHGame handheld.
 #include <CHGame.h>
+#include <CHSave.h>
 #include "Game.h"
 #include "View.h"
 #include "Haptics.h"
@@ -9,7 +10,8 @@
 bloom::Game game;
 struct Record { uint32_t high=0;uint8_t muted=0; } record;
 static bool savePending=false;
-constexpr uint32_t SAVE_MAGIC=save::magic("VBLM");
+constexpr auto SAVE_ID = chsave::id("com.juliendorra.voidbloom");
+static chsave::Store gameSaves;
 enum Sound : uint8_t { FireSound,KillSound,HurtSound,BombSound,EvolveSound,ClearSound };
 AUDIO_STEPS(FIRE_SOUND)={AUDIO_STEP(2400,1000,18)};
 AUDIO_STEPS(KILL_SOUND)={AUDIO_STEP(1100,320,35)};
@@ -70,7 +72,7 @@ void setup() {
     dbg::hook=debug;
 #endif
     gfx_begin(GFX_DIV2,GFX_12BPP);chgame.setFrameRate(60);
-    if(!save::load(SAVE_MAGIC,1,record))record=Record{};
+    if(!gameSaves.load(SAVE_ID,1,record))record=Record{};
     game.best=record.high;game.muted=record.muted;
     audio::begin(SOUNDS,sizeof SOUNDS/sizeof SOUNDS[0],!game.muted);
     haptics::begin();
@@ -122,6 +124,6 @@ void loop() {
         record.high=game.best;record.muted=game.muted;savePending=true;
     }
     gfx_wait();
-    if(savePending) {save::store(SAVE_MAGIC,1,record);savePending=false;}
+    if(savePending) {gameSaves.store(SAVE_ID,1,record);savePending=false;}
     dbg::markRenderStart();view::draw(game);dbg::markRenderEnd();gfx_flushAsync();
 }

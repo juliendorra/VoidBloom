@@ -55,7 +55,7 @@ From a source checkout, use `python3 chgame.py build`, then `python3 chgame.py e
 
 - [Game.cpp](Game.cpp) contains the same fixed-step, allocation-free rules used by the firmware and native simulator.
 - [View.cpp](View.cpp) draws the five visual stages directly into CHGfx's packed 128×128 framebuffer.
-- [VoidBloom.ino](VoidBloom.ino) uses CHGame input, audio, asynchronous display transfers, and flash saves.
+- [VoidBloom.ino](VoidBloom.ino) uses CHGame input, audio, asynchronous display transfers, and isolated SD saves.
 - [tools/tests/pilots.cpp](tools/tests/pilots.cpp) runs delayed-observation pilots using ordinary buttons; pressure fixtures are separate from no-cheat campaign runs.
 - [NOTES.md](NOTES.md) describes validation, captures, packaging, and the offline web-emulator artifact.
 
@@ -74,24 +74,15 @@ The higher-register pulse motif now takes precedence over routine gun clicks and
 
 ## SD saves
 
-Version 1.3.3 uses [CHSave 0.1.0](https://github.com/juliendorra/chgame-sd-saves).
-Progress and settings are stored in `VBLM.SAV`; existing saves are preserved.
-Prepare a mounted card before installing the new cartridge:
+Uses [CHSave 0.2](https://github.com/juliendorra/chgame-sd-saves).
+App ID: `com.juliendorra.voidbloom`. Firmware has no legacy save fallback.
 
 ```sh
+# New card:
 python3 tools/sd_saves.py prepare --card /path/to/card
+# Existing four-character journal; old file is kept:
+python3 tools/sd_saves.py migrate --card /path/to/card
 ```
 
-The source includes the pinned library and SD adapter. Build through `chgame.py`
-so the SD backend is selected. Keep save files when replacing cartridges.
-
-For source builds, clone the SDK into `.deps/CHGame` and select the tested revision:
-
-```sh
-git clone https://github.com/bateske/CHGame.git .deps/CHGame
-git -C .deps/CHGame checkout edf822c8803a4939f4d0808f779d9522ee41c2ba
-python3 chgame.py build
-python3 chgame.py export --no-build
-```
-
-Release firmware is built with GCC 16.2.0.
+Convert existing saves before installing this build. Keep the hashed `.SAV`
+files when replacing cartridges. The complete ID is checked before writing.
