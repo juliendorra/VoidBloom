@@ -27,6 +27,6 @@ if (workspace / 'arduino-cli.yaml').is_file():
 python = next((p for p in (ROOT / '.venv/bin/python', workspace / '.venv/bin/python',
                           workspace / '.cache/voidbloom-venv/bin/python') if p.is_file()), Path(sys.executable))
 raise SystemExit(subprocess.call([
-    str(python), str(chgame_root() / 'tools/chgame.py'),
+    str(python), str(ROOT / 'tools/sd_saves.py'), 'run',
     '--sketch', str(ROOT), *(sys.argv[1:] or ['build']),
 ], env=env, cwd=ROOT))

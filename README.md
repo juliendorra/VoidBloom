@@ -66,8 +66,32 @@ Browse the [wave-by-wave GIF gallery](docs/captures/README.md) for key moments f
 Original game rules, artwork, and pulse motif for a retro arcade shooter and bullet-heavy shoot 'em up. Uses Kevin Bates' CHGame / CHGfx libraries and the CHGame board package. Browser preview uses joyrider3774's CHGame emulator (MIT), executing the compiled RISC-V firmware.
 
 
-## Audio update 1.3.2
+## Audio update 1.3.3
 
 The higher-register pulse motif now takes precedence over routine gun clicks and survives a held fire button. Kills and important combat cues can still interrupt it. Pause and Help silence the real timer.
 
 [Audio validation notes](docs/audio-update.md).
+
+## SD saves
+
+Version 1.3.3 uses [CHSave 0.1.0](https://github.com/juliendorra/chgame-sd-saves).
+Progress and settings are stored in `VBLM.SAV`; existing saves are preserved.
+Prepare a mounted card before installing the new cartridge:
+
+```sh
+python3 tools/sd_saves.py prepare --card /path/to/card
+```
+
+The source includes the pinned library and SD adapter. Build through `chgame.py`
+so the SD backend is selected. Keep save files when replacing cartridges.
+
+For source builds, clone the SDK into `.deps/CHGame` and select the tested revision:
+
+```sh
+git clone https://github.com/bateske/CHGame.git .deps/CHGame
+git -C .deps/CHGame checkout edf822c8803a4939f4d0808f779d9522ee41c2ba
+python3 chgame.py build
+python3 chgame.py export --no-build
+```
+
+Release firmware is built with GCC 16.2.0.
