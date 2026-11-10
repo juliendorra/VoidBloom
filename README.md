@@ -74,15 +74,14 @@ The higher-register pulse motif now takes precedence over routine gun clicks and
 
 ## SD saves
 
-Uses [CHSave 0.3](https://github.com/juliendorra/chgame-sd-saves).
+Uses [CHSave 0.4](https://github.com/juliendorra/chgame-sd-saves).
 App ID: `com.juliendorra.voidbloom`. Firmware has no legacy save fallback.
 
 ```sh
-# New card:
-python3 tools/sd_saves.py prepare --card /path/to/card
-# Existing four-character journal; old file is kept:
+# One-time conversion of an existing four-character journal; old file is kept:
 python3 tools/sd_saves.py migrate --card /path/to/card
 ```
 
-Convert existing saves before installing this build. Keep the hashed `.SAV`
+New saves are created automatically. Convert older four-character saves
+before upgrading. Keep the hashed `.SAV`
 files when replacing cartridges. The complete ID is checked before writing.

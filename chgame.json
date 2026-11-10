@@ -1,7 +1,7 @@
 {
   "id": "void-bloom",
   "title": "VOID BLOOM",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "An endless evolving arcade shooter. Marching monochrome invaders gain color, loop out of formation and dive before blooming into free flight, spread weapons, grazing and neon bullet storms. Five weapon stages, three boss patterns, switchable wide/narrow fire and panic bombs. Optional GPIO1 rumble-pack feedback.",
   "genre": "Shooter",
   "cartImage": "docs/cart.png",
