@@ -67,7 +67,7 @@ static bool debug(char command,const char *args) {
 }
 #endif
 void setup() {
-    chgame.boot();dbg::begin("BLOOM 1.3.5");
+    chgame.boot();dbg::begin("BLOOM 1.3.6");
 #if CHGAME_DEBUG
     dbg::hook=debug;
 #endif
