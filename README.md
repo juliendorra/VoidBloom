@@ -74,6 +74,6 @@ The higher-register pulse motif now takes precedence over routine gun clicks and
 
 ## SD saves
 
-Uses [CHSave 0.5](https://github.com/juliendorra/chgame-sd-saves). New saves are created automatically in `/SAVES/ZFC8ZUW4.SAV`.
+Uses [CHSave 0.6.1](https://github.com/juliendorra/chgame-sd-saves). New saves are created automatically in `/SAVES/ZFC8ZUW4.SAV`.
 
 Upgrading? Copy `ZFC8ZUW4.SAV` from the card root into `SAVES/` before playing.
